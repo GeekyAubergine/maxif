@@ -4,38 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: {
-          DEFAULT: "#FFFFFF",
-          dark: "#0C0C0E",
-        },
-        headings: {
-          DEFAULT: "#080808",
-          dark: "#EDEDED",
-        },
-        text: {
-          DEFAULT: "#080808",
-          dark: "#EDEDED",
-        },
-        secondary: {
-          DEFAULT: "#74727B",
-          dark: "#ABA9B0",
-        },
-        accent: {
-          DEFAULT: "#784387", //'#FEB847',//#F58123', //'#89BA6A', //'#FEB847', //'#DEB9FF', //'#BB9EE0',//'#FEB847', ///#FEB847",//"#F2DE7C",//"#FEB847",//D9BBFF//00D5C6
-          dark: "#EA93E3",
-        },
-        code: {
-          DEFAULT: "#D4D4D4",
-          dark: "#303030",
-        },
-        border: {
-          DEFAULT: "#D8D8D8",
-          dark: "#404040",
-        },
-        middleGray: {
-          DEFAULT: "#888888",
-          dark: "#181818",
-        },
+        background: "#F6EEE3",
+        text: "#080808",
+        secondary: "#4F4F4F",
+        accent: "#A40606",
+        codeBackground: "#E5CBBA",
+        code: "#D4D4D4",
+        border: "#D8D8D8",
       },
       gridTemplateColumns: {
         // Simple 8 row grid

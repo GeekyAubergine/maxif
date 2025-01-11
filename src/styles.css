@@ -28,21 +28,21 @@
     }
 
     body {
-        @apply bg-background dark:bg-background-dark;
+        @apply bg-background;
     }
 
     /* ----------------  Utilities ---------------- */
 
     .text {
-        @apply text-text dark:text-text-dark tabular-nums break-words leading-[1.75rem];
+        @apply text-text tabular-nums break-words leading-[1.5rem];
     }
 
     .accent {
-        @apply text-accent dark:text-accent-dark decoration-accent dark:decoration-accent-dark;
+        @apply text-accent decoration-accent;
     }
 
     .no-accent {
-        @apply text-text dark:text-text-dark decoration-text dark:decoration-text-dark;
+        @apply text-text decoration-text;
     }
 
     .under {
@@ -52,15 +52,15 @@
     }
 
     .link {
-        @apply under text-accent dark:text-accent-dark decoration-accent dark:decoration-accent-dark;
+        @apply under text-accent decoration-accent;
     }
 
     .secondary {
-        @apply !text-secondary dark:!text-secondary-dark !decoration-secondary dark:!decoration-secondary-dark;
+        @apply !text-secondary !decoration-secondary;
     }
 
     .border-color {
-        @apply border-border dark:border-border-dark;
+        @apply border-border;
     }
 
     main {
@@ -68,7 +68,7 @@
     }
 
     hr {
-        @apply border-border dark:border-border-dark my-4 mx-0;
+        @apply border-border my-4 mx-0;
     }
 
     div,
@@ -98,23 +98,8 @@
     h3,
     h4,
     h5,
-    h6,
-    p,
-    a,
-    li,
-    blockquote,
-    img,
-    pre {
-        @apply my-2;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
     h6 {
-        /* @apply mt-8 mb-0 font-bold mr-4 sm:mr-0; */
+        @apply my-2;
     }
 
     h1 {
@@ -154,49 +139,53 @@
 
     /* ----------------  Components ---------------- */
 
-    .data {
-        @apply flex flex-row mt-8;
+    .intro {
+        @apply items-center;
     }
 
-    .file-upload {
+    .file-upload-and-details {
         @apply mx-4;
 
         .input-wrapper {
-            @apply flex flex-col items-center justify-center  w-[8rem] h-[12rem] border-2 border-dashed border-gray-400 rounded-lg;
-
-            input {
-                @apply border-2 border-dashed border-gray-400 rounded-lg p-4;
-            }
+            @apply flex flex-col items-center justify-center  w-[8rem] h-[12rem] border-2 border-dashed border-border rounded-lg;
 
             p {
                 @apply text-center;
             }
         }
+
+        .file-details {
+            @apply flex flex-col ml-4;
+        }
     }
 
-    .file-type {
-        @apply mx-4 min-w-[12rem];
-    }
+    .hex-display {
+        @apply mx-4;
+        .bytes {
+            @apply grid grid-cols-4 gap-1 max-w-[11rem] lg:grid-cols-8 lg:max-w-[19rem];
 
-    .hex-and-metadata {
-        @apply flex flex-row;
-
-        .hex-display {
-            @apply mx-4;
-            .bytes {
-                @apply grid grid-cols-8 gap-1;
-
-                .byte {
-                    @apply bg-gray-800 rounded-lg py-1 w-[2rem] h-[2rem] uppercase text-center;
-                    /* Monospaced font */
-                    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco,
-                        Consolas, "Liberation Mono", "Courier New", monospace;
-                }
-
-                .selected {
-                    @apply bg-blue-500;
-                }
+            .byte {
+                @apply p-1 my-0 uppercase text-center bg-codeBackground rounded-lg;
+                /* Monospaced font */
+                font-family: ui-monospace, SFMono-Regular, Menlo, Monaco,
+                    Consolas, "Liberation Mono", "Courier New", monospace;
             }
+
+            .selected {
+                @apply bg-blue-300;
+            }
+        }
+    }
+
+    .label-data-pair {
+        @apply mb-2;
+
+        .label {
+            @apply secondary text-sm;
+        }
+
+        .data {
+            @apply text-text ml-4;
         }
     }
 }

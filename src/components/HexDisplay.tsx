@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import cx from "classnames";
 import { FileSignatureMatch } from "../fileSignature/FileSignature";
 
 const BUFFER_LENGTH_TO_SHOW = 32;
@@ -6,6 +7,7 @@ const BUFFER_LENGTH_TO_SHOW = 32;
 type Props = {
   buffer: Uint8Array;
   signatureMatch: FileSignatureMatch | null;
+  className?: string;
 };
 
 function HexByte({
@@ -22,7 +24,11 @@ function HexByte({
   );
 }
 
-export default function HexDisplay({ buffer, signatureMatch }: Props) {
+export default function HexDisplay({
+  buffer,
+  signatureMatch,
+  className,
+}: Props) {
   const bufferElements = useMemo(() => {
     const out = [];
 
@@ -41,7 +47,7 @@ export default function HexDisplay({ buffer, signatureMatch }: Props) {
   }, [buffer, signatureMatch]);
 
   return (
-    <div className="hex-display">
+    <div className={cx("hex-display", className)}>
       <h3>Hex</h3>
       <div className="bytes">{bufferElements}</div>
     </div>
