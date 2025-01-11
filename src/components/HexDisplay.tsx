@@ -1,12 +1,12 @@
 import { useMemo } from "react";
 import cx from "classnames";
-import { FileSignatureMatch } from "../fileSignature/FileSignature";
+import { ParserError, ParsingResult } from "../parser/Parser";
 
 const BUFFER_LENGTH_TO_SHOW = 32;
 
 type Props = {
   buffer: Uint8Array;
-  signatureMatch: FileSignatureMatch | null;
+  parsingResult: ParsingResult | null;
   className?: string;
 };
 
@@ -26,25 +26,25 @@ function HexByte({
 
 export default function HexDisplay({
   buffer,
-  signatureMatch,
+  parsingResult,
   className,
 }: Props) {
   const bufferElements = useMemo(() => {
     const out = [];
 
-    console.log(signatureMatch);
+    console.log(parsingResult);
 
     for (let i = 0; i < BUFFER_LENGTH_TO_SHOW; i++) {
       const selected =
-        signatureMatch != null
-          ? i >= signatureMatch.start && i < signatureMatch.end
+        parsingResult != null && !(parsingResult instanceof ParserError)
+          ? parsingResult.magicNumber.relevantBytes.includes(i)
           : false;
 
       out.push(<HexByte key={i} byte={buffer[i]} selected={selected} />);
     }
 
     return out;
-  }, [buffer, signatureMatch]);
+  }, [buffer, parsingResult]);
 
   return (
     <div className={cx("hex-display", className)}>

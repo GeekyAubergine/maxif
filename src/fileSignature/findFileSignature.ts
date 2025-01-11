@@ -1,6 +1,6 @@
 import { FileSignatureMatch } from "./FileSignature";
 import { ReadableFile } from "../entities/types";
-import { FILE_SIGNATURES } from "../fileSignatureDB";
+import { FILE_SIGNATURES } from "./fileSignatureDB";
 
 export function findSignatureForReadableBuffer(
   readableBuffer: ReadableFile,

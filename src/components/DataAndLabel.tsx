@@ -2,7 +2,7 @@ import cx from "classnames";
 
 type Props = {
   label: string;
-  value: string;
+  value: string | null;
   className?: string;
 };
 
@@ -13,7 +13,7 @@ export default function DataAndLabel({ label, value, className }: Props) {
         {label}
       </p>
       <p aria-label={label} className="data">
-        {value}
+        {value ? value : "-"}
       </p>
     </div>
   );

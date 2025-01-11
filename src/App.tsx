@@ -1,18 +1,18 @@
 import { useCallback, useState } from "react";
-import { useDropzone } from "react-dropzone";
 import { FileDataReader } from "./entities/FileDataReader";
-import { findSignatureForReadableBuffer } from "./fileSignature/findFileSignature";
-import { FileSignatureMatch } from "./fileSignature/FileSignature";
 import HexDisplay from "./components/HexDisplay";
 import FileUploadAndDetails from "./components/FileUploadAndDetails";
+import { ParsingResult } from "./parser/Parser";
+import { parseFile } from "./parser/Parsers";
 
 function App() {
   const [displayBuffer, setDisplayBuffer] = useState<Uint8Array>(
     Uint8Array.from([]),
   );
 
-  const [signatureMatch, setSignatureMatch] =
-    useState<FileSignatureMatch | null>(null);
+  const [parsingResult, setParsingResult] = useState<ParsingResult | null>(
+    null,
+  );
 
   const onDrop = useCallback((files: File[]) => {
     console.log(files);
@@ -28,11 +28,9 @@ function App() {
 
         const fileDataReader = new FileDataReader(file, buffer);
 
-        const matchingSignature =
-          findSignatureForReadableBuffer(fileDataReader);
-        if (matchingSignature) {
-          setSignatureMatch(matchingSignature);
-        }
+        const parseResult = parseFile(fileDataReader);
+
+        setParsingResult(parseResult);
       };
 
       fileReader.readAsArrayBuffer(file);
@@ -54,8 +52,8 @@ function App() {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <FileUploadAndDetails onDrop={onDrop} signatureMatch={signatureMatch} />
-        <HexDisplay buffer={displayBuffer} signatureMatch={signatureMatch} />
+        <FileUploadAndDetails onDrop={onDrop} parsingResult={parsingResult} />
+        <HexDisplay buffer={displayBuffer} parsingResult={parsingResult} />
         <div />
       </div>
     </>

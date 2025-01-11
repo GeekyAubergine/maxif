@@ -1,4 +1,4 @@
-import { FileSignature } from "./fileSignature/FileSignature";
+import { FileSignature } from "./FileSignature";
 
 const JPEG_SIGNATURE = new FileSignature("JPEG", "FF D8 FF DB");
 const JPEG_SIGNATURE_2 = new FileSignature("JPEG", "FF D8 FF EE");

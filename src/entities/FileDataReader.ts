@@ -27,4 +27,12 @@ export class FileDataReader implements ReadableFile {
   public fileName(): string {
     return this.file.name;
   }
+
+  public lastModified(): Date {
+    return new Date(this.file.lastModified);
+  }
+
+  public size(): number {
+    return this.file.size;
+  }
 }
