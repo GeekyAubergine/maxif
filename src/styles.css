@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    /* ---------------- Core ---------------- */
+
+    html {
+        @apply text-[16px];
+    }
+
+    * {
+        font-family:
+            system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            "Helvetica Neue",
+            Arial,
+            "Noto Sans",
+            sans-serif,
+            "Apple Color Emoji",
+            "Segoe UI Emoji",
+            "Segoe UI Symbol",
+            "Noto Color Emoji";
+        font-display: swap;
+    }
+
+    body {
+        @apply bg-background dark:bg-background-dark;
+    }
+
+    /* ----------------  Utilities ---------------- */
+
+    .text {
+        @apply text-text dark:text-text-dark tabular-nums break-words leading-[1.75rem];
+    }
+
+    .accent {
+        @apply text-accent dark:text-accent-dark decoration-accent dark:decoration-accent-dark;
+    }
+
+    .no-accent {
+        @apply text-text dark:text-text-dark decoration-text dark:decoration-text-dark;
+    }
+
+    .under {
+        @apply underline hover:!underline;
+        text-underline-offset: 0.15em;
+        text-decoration-thickness: 1px;
+    }
+
+    .link {
+        @apply under text-accent dark:text-accent-dark decoration-accent dark:decoration-accent-dark;
+    }
+
+    .secondary {
+        @apply !text-secondary dark:!text-secondary-dark !decoration-secondary dark:!decoration-secondary-dark;
+    }
+
+    .border-color {
+        @apply border-border dark:border-border-dark;
+    }
+
+    main {
+        @apply w-full;
+    }
+
+    hr {
+        @apply border-border dark:border-border-dark my-4 mx-0;
+    }
+
+    div,
+    nav,
+    footer,
+    article {
+        @apply flex flex-col;
+    }
+
+    /* ----------------  Typography ---------------- */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a,
+    time,
+    li {
+        @apply text;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a,
+    li,
+    blockquote,
+    img,
+    pre {
+        @apply my-2;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        /* @apply mt-8 mb-0 font-bold mr-4 sm:mr-0; */
+    }
+
+    h1 {
+        @apply text-4xl sm:text-5xl;
+    }
+
+    h2 {
+        @apply text-2xl;
+    }
+
+    h3 {
+        @apply text-xl;
+    }
+
+    h4,
+    h5,
+    h6 {
+        @apply text-lg;
+    }
+
+    a {
+        @apply accent under;
+    }
+
+    ol {
+        @apply list-decimal list-outside ml-4;
+    }
+
+    ul {
+        @apply list-disc list-outside ml-4;
+    }
+
+    li > ul > li,
+    li > ol > li {
+        @apply ml-4;
+    }
+
+    /* ----------------  Components ---------------- */
+
+    .data {
+        @apply flex flex-row mt-8;
+    }
+
+    .file-upload {
+        @apply mx-4;
+
+        .input-wrapper {
+            @apply flex flex-col items-center justify-center  w-[8rem] h-[12rem] border-2 border-dashed border-gray-400 rounded-lg;
+
+            input {
+                @apply border-2 border-dashed border-gray-400 rounded-lg p-4;
+            }
+
+            p {
+                @apply text-center;
+            }
+        }
+    }
+
+    .file-type {
+        @apply mx-4 min-w-[12rem];
+    }
+
+    .hex-and-metadata {
+        @apply flex flex-row;
+
+        .hex-display {
+            @apply mx-4;
+            .bytes {
+                @apply grid grid-cols-8 gap-1;
+
+                .byte {
+                    @apply bg-gray-800 rounded-lg py-1 w-[2rem] h-[2rem] uppercase text-center;
+                    /* Monospaced font */
+                    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco,
+                        Consolas, "Liberation Mono", "Courier New", monospace;
+                }
+
+                .selected {
+                    @apply bg-blue-500;
+                }
+            }
+        }
+    }
+}
