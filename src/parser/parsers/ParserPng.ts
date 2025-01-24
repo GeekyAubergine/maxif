@@ -1,6 +1,9 @@
-import { FileDataReader } from "../files/FileDataReader";
-import { FileSignature, FileSignatureMatchResult } from "../files/FileSignature";
-import { Parser, ParserError, ParsingResult } from "./Parser";
+import { FileDataReader } from "../../files/FileDataReader";
+import {
+  FileSignature,
+  FileSignatureMatchResult,
+} from "../../files/FileSignature";
+import { Parser, ParserError, ParsingResult } from "../Parser";
 
 const PNG_SIGNATURE = new FileSignature("89 50 4E 47 0D 0A 1A 0A");
 
@@ -11,7 +14,7 @@ export class ParserPng implements Parser {
     return PNG_SIGNATURE.matches(file);
   }
 
-  parse(file: FileDataReader): ParsingResult | ParserError {
+  parse(file: FileDataReader): ParsingResult {
     const magicNumber = this.canReadFile(file);
 
     if (!magicNumber) {

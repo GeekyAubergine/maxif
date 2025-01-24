@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import HexDisplay from "./components/HexDisplay";
 import FileUploadAndDetails from "./components/FileUploadAndDetails";
-import { ParsingResult } from "./parser/Parser";
+import { ParserOutput, ParsingResult } from "./parser/Parser";
 import { parseFile } from "./parser/Parsers";
 import { FileDataReader } from "./files/FileDataReader";
 
@@ -62,7 +62,7 @@ function App() {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <FileUploadAndDetails onDrop={onDrop} parsingResult={parsingResult} />
+        <FileUploadAndDetails onDrop={onDrop} parsingOutput={parsingResult} />
         <HexDisplay buffer={displayBuffer} parsingResult={parsingResult} />
         <div />
       </div>

@@ -16,7 +16,7 @@ export class ParserError extends Error {
   }
 }
 
-export type ParsingResult = {
+export type ParserOutput = {
   file: {
     format: string;
     description: string;
@@ -25,7 +25,9 @@ export type ParsingResult = {
     size: number;
   };
   fileSignature: FileSignatureMatchResult;
-} | ParserError;
+};
+
+export type ParsingResult = ParserOutput | ParserError;
 
 export interface Parser {
   canReadFile(file: FileDataReader): FileSignatureMatchResult | false;

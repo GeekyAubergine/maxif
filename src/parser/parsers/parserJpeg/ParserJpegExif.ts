@@ -1,6 +1,6 @@
-import { FileDataReader } from "../files/FileDataReader";
-import { FileSignature, FileSignatureMatchResult } from "../files/FileSignature";
-import { Parser, ParserError, ParsingResult } from "./Parser";
+import { FileDataReader } from "../../../files/FileDataReader";
+import { FileSignature, FileSignatureMatchResult } from "../../../files/FileSignature";
+import { Parser, ParserError, ParsingResult } from "../../Parser";
 
 const JPEG_EXIF_SIGNATURE = new FileSignature("FF D8 FF E1 ?? ?? 45 78 69 66 00");
 
@@ -9,7 +9,7 @@ export class ParserJpegExif implements Parser {
     return JPEG_EXIF_SIGNATURE.matches(file);
   }
 
-  parse(file: FileDataReader): ParsingResult | ParserError {
+  parse(file: FileDataReader): ParsingResult {
     const magicNumber = this.canReadFile(file);
 
     if (!magicNumber) {

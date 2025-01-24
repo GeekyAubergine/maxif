@@ -10,7 +10,8 @@ type FileSignatureValue =
     };
 
 export type FileSignatureMatchResult = {
-  relevantBytes: number[];
+  readonly relevantBytes: number[];
+  readonly signatureAsString: string;
 };
 
 export class FileSignature {
@@ -87,8 +88,11 @@ export class FileSignature {
       relevantBytes.push(i);
     }
 
+    const decoder = new TextDecoder("ISO-8859-1");
+
     return {
       relevantBytes,
+      signatureAsString: this.signatureAsString,
     };
   }
 }

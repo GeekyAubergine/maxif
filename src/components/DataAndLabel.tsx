@@ -2,7 +2,7 @@ import cx from "classnames";
 
 type Props = {
   label: string;
-  value: string | null;
+  value: string | null | undefined;
   className?: string;
 };
 
