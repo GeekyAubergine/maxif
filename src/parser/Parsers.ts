@@ -16,6 +16,9 @@ import { ParserLibpcapFileFormat } from "./parsers/libpcap/ParserLibpcapFileForm
 import { ParserLibpcapFileFormatNS } from "./parsers/libpcap/ParserLibpcapFileFormatNS";
 import { ParserPCAPNextGenDumpFile } from "./parsers/ParserPCAPNextGenDumpFile";
 import { ParserRedHatPackageManagerPackage } from "./parsers/ParserRedHatPackageManagerPackage";
+import { ParserSQLiteDatabase } from "./parsers/ParserSQLiteDatabase";
+import { ParserAmazonKindleUpdate } from "./parsers/ParserAmazonKindleUpdatePackage";
+import { ParserInternalWad } from "./parsers/ParserInternalWad";
 
 // Order taken from https://en.wikipedia.org/wiki/List_of_file_signatures
 
@@ -33,6 +36,9 @@ export const PARSERS: Parser[] = [
   new ParserLibpcapFileFormatNS(),
   new ParserPCAPNextGenDumpFile(),
   new ParserRedHatPackageManagerPackage(),
+  new ParserSQLiteDatabase(),
+  new ParserAmazonKindleUpdate(),
+  new ParserInternalWad(),
   new ParserJpeg(),
   new ParserJpegExif(),
   new ParserJpeg(),
@@ -40,12 +46,20 @@ export const PARSERS: Parser[] = [
 ];
 
 export function parseFile(file: FileDataReader): ParserOutput | ParserError {
+  let bestParser: Parser | null = null;
+  let longestMatch = 0;
+
   for (const parser of PARSERS) {
     const result = parser.canReadFile(file);
 
-    if (result) {
-      return parser.parse(file);
+    if (result && result.relevantBytes.length > longestMatch) {
+      bestParser = parser;
+      longestMatch = result.relevantBytes.length;
     }
+  }
+
+  if (bestParser) {
+    return bestParser.parse(file);
   }
 
   return new ParserError("Unknown file format", -1, new Uint8Array());

@@ -88,8 +88,6 @@ export class FileSignature {
       relevantBytes.push(i);
     }
 
-    const decoder = new TextDecoder("ISO-8859-1");
-
     return {
       relevantBytes,
       signatureAsString: this.signatureAsString,
