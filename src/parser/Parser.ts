@@ -1,5 +1,5 @@
-import { FileDataReader } from "../entities/FileDataReader";
-import { MagicNumberResult } from "../magicNumber/MagicNumber";
+import { FileDataReader } from "../files/FileDataReader";
+import { FileSignatureMatchResult } from "../files/FileSignature";
 
 export class ParserError extends Error {
   readonly message: string;
@@ -24,10 +24,10 @@ export type ParsingResult = {
     lastModified: Date;
     size: number;
   };
-  magicNumber: MagicNumberResult;
+  fileSignature: FileSignatureMatchResult;
 } | ParserError;
 
 export interface Parser {
-  canReadFile(file: FileDataReader): MagicNumberResult | false;
+  canReadFile(file: FileDataReader): FileSignatureMatchResult | false;
   parse(file: FileDataReader): ParsingResult;
 }

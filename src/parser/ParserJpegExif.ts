@@ -1,10 +1,11 @@
-import { FileDataReader } from "../entities/FileDataReader";
-import { MagicNumber, MagicNumberResult } from "../magicNumber/MagicNumber";
+import { FileDataReader } from "../files/FileDataReader";
+import { FileSignature, FileSignatureMatchResult } from "../files/FileSignature";
 import { Parser, ParserError, ParsingResult } from "./Parser";
 
-const JPEG_EXIF_SIGNATURE = new MagicNumber("FF D8 FF E1 ?? ?? 45 78 69 66 00");
+const JPEG_EXIF_SIGNATURE = new FileSignature("FF D8 FF E1 ?? ?? 45 78 69 66 00");
+
 export class ParserJpegExif implements Parser {
-  canReadFile(file: FileDataReader): MagicNumberResult | false {
+  canReadFile(file: FileDataReader): FileSignatureMatchResult | false {
     return JPEG_EXIF_SIGNATURE.matches(file);
   }
 
@@ -23,7 +24,7 @@ export class ParserJpegExif implements Parser {
         lastModified: file.lastModified(),
         size: file.size(),
       },
-      magicNumber,
+      fileSignature: magicNumber,
     };
   }
 }

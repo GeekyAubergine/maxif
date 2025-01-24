@@ -1,13 +1,13 @@
-import { FileDataReader } from "../entities/FileDataReader";
-import { MagicNumber, MagicNumberResult } from "../magicNumber/MagicNumber";
+import { FileDataReader } from "../files/FileDataReader";
+import { FileSignature, FileSignatureMatchResult } from "../files/FileSignature";
 import { Parser, ParserError, ParsingResult } from "./Parser";
 
-const JPEG_SIGNATURE = new MagicNumber("FF D8 FF DB");
-const JPEG_SIGNATURE_2 = new MagicNumber("FF D8 FF EE");
-const JPEG_SIGNATURE_3 = new MagicNumber("FF D8 FF E0");
+const JPEG_SIGNATURE = new FileSignature("FF D8 FF DB");
+const JPEG_SIGNATURE_2 = new FileSignature("FF D8 FF EE");
+const JPEG_SIGNATURE_3 = new FileSignature("FF D8 FF E0");
 
 export class ParserJpeg implements Parser {
-  canReadFile(file: FileDataReader): MagicNumberResult | false {
+  canReadFile(file: FileDataReader): FileSignatureMatchResult | false {
     return (
       JPEG_SIGNATURE.matches(file) ||
       JPEG_SIGNATURE_2.matches(file) ||
@@ -16,9 +16,9 @@ export class ParserJpeg implements Parser {
   }
 
   parse(file: FileDataReader): ParsingResult | ParserError {
-    const magicNumber = this.canReadFile(file);
+    const fileSignature = this.canReadFile(file);
 
-    if (!magicNumber) {
+    if (!fileSignature) {
       return new ParserError("Invalid file format", -1, new Uint8Array());
     }
 
@@ -30,7 +30,7 @@ export class ParserJpeg implements Parser {
         lastModified: file.lastModified(),
         size: file.size(),
       },
-      magicNumber,
+      fileSignature: fileSignature,
     };
   }
 }

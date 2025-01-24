@@ -37,7 +37,7 @@ export default function HexDisplay({
     for (let i = 0; i < BUFFER_LENGTH_TO_SHOW; i++) {
       const selected =
         parsingResult != null && !(parsingResult instanceof ParserError)
-          ? parsingResult.magicNumber.relevantBytes.includes(i)
+          ? parsingResult.fileSignature.relevantBytes.includes(i)
           : false;
 
       out.push(<HexByte key={i} byte={buffer[i]} selected={selected} />);

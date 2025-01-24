@@ -1,9 +1,9 @@
 import { useCallback, useState } from "react";
-import { FileDataReader } from "./entities/FileDataReader";
 import HexDisplay from "./components/HexDisplay";
 import FileUploadAndDetails from "./components/FileUploadAndDetails";
 import { ParsingResult } from "./parser/Parser";
 import { parseFile } from "./parser/Parsers";
+import { FileDataReader } from "./files/FileDataReader";
 
 function App() {
   const [displayBuffer, setDisplayBuffer] = useState<Uint8Array>(
@@ -22,11 +22,21 @@ function App() {
       const fileReader = new FileReader();
 
       fileReader.onload = () => {
-        const buffer = new Uint8Array(fileReader.result as ArrayBuffer);
+        if (fileReader.result == null) {
+          // TODO error
+          alert("File read was null");
+          return;
+        }
 
-        setDisplayBuffer(buffer.slice(0, 128));
+        if (typeof fileReader.result === "string") {
+          // TODO error
+          alert("File read was a string");
+          return;
+        }
 
-        const fileDataReader = new FileDataReader(file, buffer);
+        setDisplayBuffer(new Uint8Array(fileReader.result.slice(0, 128)));
+
+        const fileDataReader = new FileDataReader(file, fileReader.result);
 
         const parseResult = parseFile(fileDataReader);
 

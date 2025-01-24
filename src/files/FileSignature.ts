@@ -1,6 +1,6 @@
-import { ReadableFile } from "../entities/types";
+import { FileData } from "./FileDataReader";
 
-type MagicNumberValue =
+type FileSignatureValue =
   | {
       type: "number";
       number: number;
@@ -9,18 +9,18 @@ type MagicNumberValue =
       type: "wildcard";
     };
 
-export type MagicNumberResult = {
+export type FileSignatureMatchResult = {
   relevantBytes: number[];
 };
 
-export class MagicNumber {
+export class FileSignature {
   readonly signatureAsString: string;
 
   readonly offset: number;
 
   readonly isLittleEndian: boolean;
 
-  private readonly magicNumbers: MagicNumberValue[];
+  private readonly fileSignature: FileSignatureValue[];
 
   public constructor(
     signatureAsString: string,
@@ -33,7 +33,7 @@ export class MagicNumber {
 
     const s = signatureAsString.replace(/\s/g, "");
 
-    this.magicNumbers = [];
+    this.fileSignature = [];
 
     for (let i = 0; i < s.length; i += 2) {
       const sub = s.substring(i, i + 2);
@@ -43,15 +43,17 @@ export class MagicNumber {
       }
 
       if (sub === "??") {
-        this.magicNumbers.push({ type: "wildcard" });
+        this.fileSignature.push({ type: "wildcard" });
         continue;
       }
 
       if (sub.length !== 2) {
-        throw new Error(`Invalid signature format: ${signatureAsString}`);
+        throw new Error(
+          `Invalid signature format: ${signatureAsString}. Next byte at ${i} is not 2 characters long [${sub}]`,
+        );
       }
 
-      this.magicNumbers.push({ type: "number", number: parseInt(sub, 16) });
+      this.fileSignature.push({ type: "number", number: parseInt(sub, 16) });
     }
   }
 
@@ -62,18 +64,15 @@ export class MagicNumber {
     return this.signatureAsString;
   }
 
-  public matches(readableBuffer: ReadableFile): MagicNumberResult | false {
-    const data = readableBuffer.select(
-      0,
-      this.offset + this.magicNumbers.length,
-    );
+  public matches(readableBuffer: FileData): FileSignatureMatchResult | false {
+    const data = readableBuffer.peak(this.offset + this.fileSignature.length);
 
     console.log({ data });
 
     const relevantBytes: number[] = [];
 
-    for (let i = 0; i < this.magicNumbers.length; i += 1) {
-      const magicNumber = this.magicNumbers[i];
+    for (let i = 0; i < this.fileSignature.length; i += 1) {
+      const magicNumber = this.fileSignature[i];
 
       if (magicNumber.type === "wildcard") {
         continue;
