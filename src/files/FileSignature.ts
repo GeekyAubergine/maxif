@@ -296,16 +296,64 @@ export const FILE_SIGNATURE_HEIC = new FileSignature(
   "High Efficiency Image Format",
 );
 
+export const FILE_SIGNATURE_COMPRESSED_LEMPEL_ZIV_WELCH = new FileSignature(
+  "1F 9D",
+  0,
+  "Compressed file using the Lempel-Ziv-Welch algorithm",
+);
+
+export const FILE_SIGNATURE_COMPRESSED_LZH = new FileSignature(
+  "1F A0",
+  0,
+  "Compressed file using the LZH algorithm",
+);
+
+export const FILE_SIGNATURE_COMPRESSED_LZH_METHOD_0 = new FileSignature(
+  "2D 68 6C 30 2D",
+  2,
+  "LZH archive file using Method 0",
+);
+
+export const FILE_SIGNATURE_COMPRESSED_LZH_METHOD_5 = new FileSignature(
+  "2D 68 6C 35 2D",
+  2,
+  "LZH archive file using Method 5",
+);
+
+export const FILE_SIGNATURE_AMIBACK_AMIGA_BACKUP_DATA = new FileSignature(
+  "42 41 43 4B 4D 49 4B 45 44 49 53 4B",
+  0,
+  "AmiBack Amiga Backup Data File",
+);
+
+export const FILE_SIGNATURE_AMIBACK_AMIGA_BACKUP_INDEX = new FileSignature(
+  "49 4E 44 58",
+  0,
+  "AmiBack Amiga Backup Index File",
+);
+
+export const FILE_SIGNATURE_PLIST = new FileSignature(
+  "62 70 6C 69 73 74",
+  0,
+  "Binary PList file",
+);
+
+export const FILE_SIGNATURE_BZIP2_COMPRESSED_FILE = new FileSignature(
+  "42 5A 68",
+  0,
+  "Bzip2 compressed file",
+);
+
 export const FILE_SIGNATURE_GIF = new FileSignature(
   "47 49 46 38 37 61",
   0,
-  "GIF",
+  "GIF 87a",
 );
 
 export const FILE_SIGNATURE_GIF_2 = new FileSignature(
   "47 49 46 38 39 61",
   0,
-  "GIF",
+  "GIF 89a",
 );
 
 export const FILE_SIGNATURE_TIFF = new FileSignature("4D 4D 00 2A", 0, "TIFF");
@@ -412,11 +460,86 @@ export const FILE_SIGNATURE_JPEG_2000_2 = new FileSignature(
   "JPEG 2000",
 );
 
+export const FILE_SIGNATURE_QOI = new FileSignature(
+  "71 6f 69 66",
+  0,
+  "QOI",
+  "Quite Ok Image Format",
+);
+
+export const FILE_SIGNATURE_IFF_BITMAP = new FileSignature(
+  "46 4F 52 4D ?? ?? ?? ?? 49 4C 42 4D",
+  0,
+  "IFF Interleaved Bitmap Image",
+);
+
+export const FILE_SIGNATURE_IFF_SMAPLED_VOICE = new FileSignature(
+  "46 4F 52 4D ?? ?? ?? ?? 38 53 56 58",
+  0,
+  "IFF Sampled Voice",
+);
+
+export const FILE_SIGNATURE_AMIGA_CONTIGUOUS_BITMAP = new FileSignature(
+  "46 4F 52 4D ?? ?? ?? ?? 41 43 42 4D",
+  0,
+  "Amiga Contiguous Bitmap",
+);
+
+export const FILE_SIGNATURE_IFF_ANIMATED_BITMAP = new FileSignature(
+  "46 4F 52 4D ?? ?? ?? ?? 41 4E 42 4D",
+  0,
+  "IFF Animated Bitmap",
+);
+
+export const FILE_SIGNATURE_IFF_CEL_ANIMATION = new FileSignature(
+  "46 4F 52 4D ?? ?? ?? ?? 41 4E 49 4D",
+  0,
+  "IFF CEL Animation",
+);
+
+export const FILE_SIGNATURE_IFF_FACSMILE_IMAGE = new FileSignature(
+  "46 4F 52 4D ?? ?? ?? ?? 46 41 58 58",
+  0,
+  "IFF Facsimile Image",
+);
+
+export const FILE_SIGNATURE_IFF_FORMATTED_TEXT = new FileSignature(
+  "46 4F 52 4D ?? ?? ?? ?? 46 54 58 54",
+  0,
+  "IFF Formatted Text",
+);
+
+export const FILE_SIGNATURE_IFF_SIMPLE_MUSICAL_SCORE = new FileSignature(
+  "46 4F 52 4D ?? ?? ?? ?? 53 4D 55 53",
+  0,
+  "IFF Simple Musical Score",
+);
+
+export const FILE_SIGNATURE_IFF_MUSICAL_SCORE = new FileSignature(
+  "46 4F 52 4D ?? ?? ?? ?? 43 4D 55 53",
+  0,
+  "IFF Musical Score",
+);
+
+export const FILE_SIGNATURE_IFF_YUV_IMAGE = new FileSignature(
+  "46 4F 52 4D ?? ?? ?? ?? 59 55 56 4E",
+  0,
+  "IFF YUV Image",
+);
+
+export const FILE_SIGNATURE_AMIGA_FANTAVISION = new FileSignature(
+  "46 4F 52 4D ?? ?? ?? ?? 46 41 4E 54",
+  0,
+  "Amiga Fantavision Movie",
+);
+
 export const FILE_SIGNATURE_AIFF = new FileSignature(
   "46 4F 52 4D ?? ?? ?? ?? 41 49 46 46",
   0,
   "AIFF",
 );
+
+// here
 
 export const FILE_SIGNATURE_PNG = new FileSignature(
   "89 50 4E 47 0D 0A 1A 0A",
@@ -543,3 +666,8 @@ export const FILE_SIGNATURE_DSS_V3 = new FileSignature(
   0,
   "DSS V3",
 );
+
+// Not on wiki list
+
+//heif
+// HEVC
