@@ -1,4 +1,4 @@
-name: Deploy
+name: Build and Deploy
 
 on:
   push:
@@ -14,11 +14,20 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 10
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: pnpm install
 
       - name: Build project
         run: npm run build
