@@ -1,17 +1,19 @@
 import { useDropzone } from "react-dropzone";
 import cx from "classnames";
 import DataAndLabel from "./DataAndLabel";
-import { ParsingResult } from "../parser/Parser";
+import { FileSignatureMatchResult } from "../files/FileSignature";
 
 type Props = {
   onDrop: (acceptedFiles: File[]) => void;
-  parsingOutput: ParsingResult | null;
+  file: File | null;
+  fileSignatureMatchResult: FileSignatureMatchResult;
   className?: string;
 };
 
 export default function FileUploadAndDetails({
   onDrop,
-  parsingOutput: parsingResult,
+  file,
+  fileSignatureMatchResult,
   className,
 }: Props) {
   const { getRootProps, getInputProps } = useDropzone({
@@ -28,19 +30,20 @@ export default function FileUploadAndDetails({
           <p>Drag or Click to Upload File</p>
         </div>
         <div className="file-details">
-          {!(parsingResult instanceof Error) && (
+          {file != null && (
+            <>
+              <DataAndLabel label="File Name" value={file?.name} />
+            </>
+          )}
+          {fileSignatureMatchResult !== false && (
             <>
               <DataAndLabel
-                label="File Name"
-                value={parsingResult?.file.fileName}
-              />
-              <DataAndLabel
                 label="File Type"
-                value={parsingResult?.file.format}
+                value={fileSignatureMatchResult.name}
               />
               <DataAndLabel
                 label="File Signature"
-                value={parsingResult?.fileSignature.signatureAsString}
+                value={fileSignatureMatchResult.signatureAsString}
               />
             </>
           )}

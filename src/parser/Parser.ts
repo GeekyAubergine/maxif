@@ -1,5 +1,5 @@
 import { FileDataReader } from "../files/FileDataReader";
-import { FileSignatureMatchResult } from "../files/FileSignature";
+import { FileSignatureMatch } from "../files/FileSignature";
 
 export class ParserError extends Error {
   readonly message: string;
@@ -16,20 +16,11 @@ export class ParserError extends Error {
   }
 }
 
-export type ParserOutput = {
-  file: {
-    format: string;
-    description: string;
-    fileName: string;
-    lastModified: Date;
-    size: number;
-  };
-  fileSignature: FileSignatureMatchResult;
-};
+export type ParserOutput = null;
 
 export type ParsingResult = ParserOutput | ParserError;
 
 export interface Parser {
-  canReadFile(file: FileDataReader): FileSignatureMatchResult | false;
+  canReadFile(file: FileDataReader): FileSignatureMatch | false;
   parse(file: FileDataReader): ParsingResult;
 }

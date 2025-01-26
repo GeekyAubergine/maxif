@@ -8,18 +8,14 @@ export interface FileData {
   peak(length: number): Uint8Array;
   consume(length: number): Uint8Array;
   resetCursor(): FileData;
-  fileName(): string;
 }
 
 export class FileDataReader implements FileData {
-  private readonly file: File;
-
   private readonly buffer: ArrayBuffer;
 
   private cursor = 0;
 
-  public constructor(file: File, dataView: ArrayBuffer) {
-    this.file = file;
+  public constructor(dataView: ArrayBuffer) {
     this.buffer = dataView;
   }
 
@@ -39,17 +35,5 @@ export class FileDataReader implements FileData {
   public resetCursor(): FileData {
     this.cursor = 0;
     return this
-  }
-
-  public fileName(): string {
-    return this.file.name;
-  }
-
-  public lastModified(): Date {
-    return new Date(this.file.lastModified);
-  }
-
-  public size(): number {
-    return this.file.size;
   }
 }

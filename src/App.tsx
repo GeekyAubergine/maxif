@@ -1,16 +1,56 @@
 import { useCallback, useState } from "react";
 import HexDisplay from "./components/HexDisplay";
 import FileUploadAndDetails from "./components/FileUploadAndDetails";
-import { ParserOutput, ParsingResult } from "./parser/Parser";
-import { parseFile } from "./parser/Parsers";
+import { ParsingResult } from "./parser/Parser";
 import { FileDataReader } from "./files/FileDataReader";
+import { FileSignature, FileSignatureMatchResult } from "./files/FileSignature";
+
+function onFileLoad(
+  file: File,
+  fileReader: FileReader,
+  setFile: (file: File) => void,
+  setDisplayBuffer: (displayBuffer: Uint8Array) => void,
+  setFileSignatureResult: (match: FileSignatureMatchResult) => void,
+  _setParsingResult: (parsingResult: ParsingResult | null) => void,
+) {
+  if (fileReader.result == null) {
+    // TODO error
+    alert("File read was null");
+    return;
+  }
+
+  if (typeof fileReader.result === "string") {
+    // TODO error
+    alert("File read was a string");
+    return;
+  }
+
+  setFile(file);
+
+  setDisplayBuffer(new Uint8Array(fileReader.result.slice(0, 128)));
+
+  const fileDataReader = new FileDataReader(fileReader.result);
+
+  const fileSignatureResult = FileSignature.findSignature(fileDataReader);
+
+  setFileSignatureResult(fileSignatureResult);
+
+  // const parseResult = parseFile(fileDataReader);
+
+  // setParsingResult(parseResult);
+}
 
 function App() {
   const [displayBuffer, setDisplayBuffer] = useState<Uint8Array>(
     Uint8Array.from([]),
   );
 
-  const [parsingResult, setParsingResult] = useState<ParsingResult | null>(
+  const [file, setFile] = useState<File | null>(null);
+
+  const [fileSignatureMatchResult, setFileSignatureMatchResult] =
+    useState<FileSignatureMatchResult>(false);
+
+  const [_parsingResult, setParsingResult] = useState<ParsingResult | null>(
     null,
   );
 
@@ -22,25 +62,14 @@ function App() {
       const fileReader = new FileReader();
 
       fileReader.onload = () => {
-        if (fileReader.result == null) {
-          // TODO error
-          alert("File read was null");
-          return;
-        }
-
-        if (typeof fileReader.result === "string") {
-          // TODO error
-          alert("File read was a string");
-          return;
-        }
-
-        setDisplayBuffer(new Uint8Array(fileReader.result.slice(0, 128)));
-
-        const fileDataReader = new FileDataReader(file, fileReader.result);
-
-        const parseResult = parseFile(fileDataReader);
-
-        setParsingResult(parseResult);
+        onFileLoad(
+          file,
+          fileReader,
+          setFile,
+          setDisplayBuffer,
+          setFileSignatureMatchResult,
+          setParsingResult,
+        );
       };
 
       fileReader.readAsArrayBuffer(file);
@@ -62,8 +91,15 @@ function App() {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <FileUploadAndDetails onDrop={onDrop} parsingOutput={parsingResult} />
-        <HexDisplay buffer={displayBuffer} parsingResult={parsingResult} />
+        <FileUploadAndDetails
+          onDrop={onDrop}
+          file={file}
+          fileSignatureMatchResult={fileSignatureMatchResult}
+        />
+        <HexDisplay
+          buffer={displayBuffer}
+          fileSignatureMatchResult={fileSignatureMatchResult}
+        />
         <div />
       </div>
     </>
