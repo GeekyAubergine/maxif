@@ -96,6 +96,7 @@ function App() {
           <h1>MAXIF</h1>
           <p>Files sometimes aren't what they seem</p>
           <p>MAXIF uses file signatures to verify file types</p>
+          <p>It'll also pull any metadata it can find</p>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
