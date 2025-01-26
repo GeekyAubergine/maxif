@@ -5,13 +5,14 @@ import {
 } from "../../../files/FileSignature";
 import { Parser, ParserError, ParsingResult } from "../../Parser";
 
-const JPEG_JFIF_SIGNATURE = new FileSignature(
-  "FF D8 FF E0 ?? ?? 4A 46 49 46 00",
-);
+const SIGNATURE = new FileSignature("47 49 46 38 37 61");
+const SIGNATURE_2 = new FileSignature("47 49 46 38 39 61");
 
-export class ParserJpegJFIF implements Parser {
+export class ParserGif implements Parser {
+  public readonly fileSignature = SIGNATURE;
+
   canReadFile(file: FileDataReader): FileSignatureMatchResult | false {
-    return JPEG_JFIF_SIGNATURE.matches(file);
+    return SIGNATURE.matches(file) || SIGNATURE_2.matches(file);
   }
 
   parse(file: FileDataReader): ParsingResult {
@@ -23,8 +24,8 @@ export class ParserJpegJFIF implements Parser {
 
     return {
       file: {
-        format: "JPEG JFIF",
-        description: "JPEG image with JFIF metadata",
+        format: "GIF",
+        description: "Graphics Interchange Format",
         fileName: file.fileName(),
         lastModified: file.lastModified(),
         size: file.size(),

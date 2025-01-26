@@ -1,6 +1,6 @@
-import { FileDataReader } from "../../../files/FileDataReader";
-import { FileSignature, FileSignatureMatchResult } from "../../../files/FileSignature";
-import { Parser, ParserError, ParsingResult } from "../../Parser";
+import { FileDataReader } from "../../../../files/FileDataReader";
+import { FileSignature, FileSignatureMatchResult } from "../../../../files/FileSignature";
+import { Parser, ParserError, ParsingResult } from "../../../Parser";
 
 const JPEG_SIGNATURE = new FileSignature("FF D8 FF DB");
 const JPEG_SIGNATURE_2 = new FileSignature("FF D8 FF EE");

@@ -1,12 +1,17 @@
 import { FileDataReader } from "../../../files/FileDataReader";
-import { FileSignature, FileSignatureMatchResult } from "../../../files/FileSignature";
+import {
+  FileSignature,
+  FileSignatureMatchResult,
+} from "../../../files/FileSignature";
 import { Parser, ParserError, ParsingResult } from "../../Parser";
 
-const JPEG_EXIF_SIGNATURE = new FileSignature("FF D8 FF E1 ?? ?? 45 78 69 66 00");
+const SIGNATURE = new FileSignature("4D 4D 00 2B");
 
-export class ParserJpegExif implements Parser {
+export class ParserBigTiff implements Parser {
+  public readonly fileSignature = SIGNATURE;
+
   canReadFile(file: FileDataReader): FileSignatureMatchResult | false {
-    return JPEG_EXIF_SIGNATURE.matches(file);
+    return SIGNATURE.matches(file);
   }
 
   parse(file: FileDataReader): ParsingResult {
@@ -18,8 +23,8 @@ export class ParserJpegExif implements Parser {
 
     return {
       file: {
-        format: "JPEG EXIF",
-        description: "JPEG image with EXIF metadata",
+        format: "BigTIFF",
+        description: "Big Tagged Image File Format",
         fileName: file.fileName(),
         lastModified: file.lastModified(),
         size: file.size(),

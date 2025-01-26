@@ -1,9 +1,9 @@
-import { FileDataReader } from "../../files/FileDataReader";
+import { FileDataReader } from "../../../files/FileDataReader";
 import {
   FileSignature,
   FileSignatureMatchResult,
-} from "../../files/FileSignature";
-import { Parser, ParserError, ParsingResult } from "../Parser";
+} from "../../../files/FileSignature";
+import { Parser, ParserError, ParsingResult } from "../../Parser";
 
 const PNG_SIGNATURE = new FileSignature("89 50 4E 47 0D 0A 1A 0A");
 

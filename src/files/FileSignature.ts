@@ -94,3 +94,7 @@ export class FileSignature {
     };
   }
 }
+
+export const FILE_SIGANTURE_SCRIPT_FILE = new FileSignature("23 21");
+export const FILE_SIGNATURE_CLARIS_WORKS_WORD_PROCESSING_DOCS =
+  new FileSignature("02 00 5a 57 52 54 00 00 00 00 00 00 00 00 00 00");
