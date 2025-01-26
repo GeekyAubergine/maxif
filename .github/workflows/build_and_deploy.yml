@@ -58,7 +58,7 @@ jobs:
 
       - name: Deploy
         run: |
-            scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ./dist ${{ secrets.BUILDR_SERVER_USER }}@${{ secrets.BUILD_SERVER_HOST }}:${{ secrets.BUILD_SERVER_DIR }}
+            scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r ./dist ${{ secrets.BUILDR_SERVER_USER }}@${{ secrets.BUILD_SERVER_HOST }}:${{ secrets.BUILD_SERVER_DIR }}
 
       # - name: Deploy to GitHub Pages
       #   uses: peaceiris/actions-gh-pages@v3
