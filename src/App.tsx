@@ -1,9 +1,10 @@
 import { useCallback, useState } from "react";
 import HexDisplay from "./components/HexDisplay";
 import FileUploadAndDetails from "./components/FileUploadAndDetails";
-import { ParsingResult } from "./parser/Parser";
-import { FileDataReader } from "./files/FileDataReader";
+import { Parser, PARSERS, ParsingResult } from "./parser/Parser";
+import { DataViewWithCursor } from "./files/FileDataReader";
 import { FileSignature, FileSignatureMatchResult } from "./files/FileSignature";
+import MetadataDisplay from "./components/MetadataDisplay";
 
 function onFileLoad(
   file: File,
@@ -11,7 +12,7 @@ function onFileLoad(
   setFile: (file: File) => void,
   setDisplayBuffer: (displayBuffer: Uint8Array) => void,
   setFileSignatureResult: (match: FileSignatureMatchResult) => void,
-  _setParsingResult: (parsingResult: ParsingResult | null) => void,
+  setParsingResult: (parsingResult: ParsingResult | null) => void,
 ) {
   if (fileReader.result == null) {
     // TODO error
@@ -29,15 +30,27 @@ function onFileLoad(
 
   setDisplayBuffer(new Uint8Array(fileReader.result.slice(0, 128)));
 
-  const fileDataReader = new FileDataReader(fileReader.result);
+  const fileSignatureResult = FileSignature.findSignature(fileReader.result);
 
-  const fileSignatureResult = FileSignature.findSignature(fileDataReader);
+  const fileDataReader = new DataViewWithCursor(
+    new DataView(fileReader.result),
+  );
 
   setFileSignatureResult(fileSignatureResult);
 
-  // const parseResult = parseFile(fileDataReader);
+  if (fileSignatureResult === false) {
+    return;
+  }
 
-  // setParsingResult(parseResult);
+  const parser: Parser | null = PARSERS[fileSignatureResult.name];
+
+  console.log(parser);
+
+  if (parser) {
+    const parseResult = parser.parse(fileDataReader);
+    setParsingResult(parseResult);
+    console.log(parseResult);
+  }
 }
 
 function App() {
@@ -50,7 +63,7 @@ function App() {
   const [fileSignatureMatchResult, setFileSignatureMatchResult] =
     useState<FileSignatureMatchResult>(false);
 
-  const [_parsingResult, setParsingResult] = useState<ParsingResult | null>(
+  const [parsingResult, setParsingResult] = useState<ParsingResult | null>(
     null,
   );
 
@@ -80,14 +93,9 @@ function App() {
     <>
       <div className="intro-and-file-upload">
         <div className="intro">
-          <p>What type of file is that?</p>
-          <p>Ever had a user upload a file your software doesn't recognise?</p>
-          <p>Ever had to manually inspect a file to figure out what it is?</p>
-          <p>Well fret no more!</p>
-          <p>
-            MAXIF is a simple tool that helps you identify the type of file you
-            are looking at
-          </p>
+          <h1>MAXIF</h1>
+          <p>Files sometimes aren't what they seem</p>
+          <p>MAXIF uses file signatures to verify file types</p>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -100,7 +108,7 @@ function App() {
           buffer={displayBuffer}
           fileSignatureMatchResult={fileSignatureMatchResult}
         />
-        <div />
+        <MetadataDisplay parsingResult={parsingResult} />
       </div>
     </>
   );

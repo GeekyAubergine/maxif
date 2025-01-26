@@ -140,14 +140,19 @@
     /* ----------------  Components ---------------- */
 
     .intro {
-        @apply items-center;
+        @apply items-center my-16;
+
+        h1,
+        p {
+            @apply text-center my-1;
+        }
     }
 
     .file-upload-and-details {
         @apply mx-4;
 
         .input-wrapper {
-            @apply flex flex-col items-center justify-center  w-[8rem] h-[12rem] border-2 border-dashed border-border rounded-lg;
+            @apply flex flex-col items-center justify-center w-[12rem] h-[14rem] bg-accent border-2 border-dashed border-border rounded;
 
             p {
                 @apply text-center;
@@ -172,7 +177,7 @@
             }
 
             .selected {
-                @apply bg-blue-300;
+                @apply bg-accent;
             }
         }
     }

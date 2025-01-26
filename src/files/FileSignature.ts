@@ -1,5 +1,3 @@
-import { FileData } from "./FileDataReader";
-
 type FileSignatureValue =
   | {
       type: "number";
@@ -28,11 +26,11 @@ export class FileSignature {
 
   private static FILE_SIGNATURES: FileSignature[] = [];
 
-  static findSignature(file: FileData): FileSignatureMatchResult {
+  static findSignature(buffer: ArrayBuffer): FileSignatureMatchResult {
     let bestMatch: FileSignatureMatch | false = false;
 
     for (const signature of FileSignature.FILE_SIGNATURES) {
-      const match = signature.matches(file);
+      const match = signature.matches(buffer);
 
       if (match) {
         if (
@@ -87,8 +85,10 @@ export class FileSignature {
     return this.signatureAsString;
   }
 
-  public matches(readableBuffer: FileData): FileSignatureMatch | false {
-    const data = readableBuffer.peak(this.offset + this.fileSignature.length);
+  public matches(buffer: ArrayBuffer): FileSignatureMatch | false {
+    const data = new Uint8Array(
+      buffer.slice(this.offset, this.offset + this.fileSignature.length),
+    );
 
     console.log({ data });
 

@@ -1,5 +1,5 @@
-import { FileDataReader } from "../files/FileDataReader";
-import { FileSignatureMatch } from "../files/FileSignature";
+import { DataViewWithCursor } from "../files/FileDataReader";
+import { ParserWebP } from "./ParserWebP";
 
 export class ParserError extends Error {
   readonly message: string;
@@ -16,11 +16,17 @@ export class ParserError extends Error {
   }
 }
 
-export type ParserOutput = null;
+export type ParserOutput = {
+  metadata: Record<string, string>;
+};
 
 export type ParsingResult = ParserOutput | ParserError;
 
 export interface Parser {
-  canReadFile(file: FileDataReader): FileSignatureMatch | false;
-  parse(file: FileDataReader): ParsingResult;
+  register(): void;
+  parse(data: DataViewWithCursor): ParsingResult;
 }
+
+export const PARSERS: Record<string, Parser> = {};
+
+new ParserWebP().register();
