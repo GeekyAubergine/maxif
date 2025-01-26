@@ -22,6 +22,8 @@ export class FileSignature {
 
   readonly name: string;
 
+  readonly description: string | null;
+
   private readonly fileSignature: FileSignatureValue[];
 
   private static FILE_SIGNATURES: FileSignature[] = [];
@@ -33,6 +35,8 @@ export class FileSignature {
       const match = signature.matches(buffer);
 
       if (match) {
+        console.log({ match, bestMatch });
+
         if (
           bestMatch === false ||
           bestMatch.relevantBytes.length < match.relevantBytes.length
@@ -45,10 +49,16 @@ export class FileSignature {
     return bestMatch;
   }
 
-  public constructor(signatureAsString: string, offset = 0, name: string) {
+  public constructor(
+    signatureAsString: string,
+    offset = 0,
+    name: string,
+    description: string | null = null,
+  ) {
     this.signatureAsString = signatureAsString;
     this.offset = offset;
     this.name = name;
+    this.description = description;
 
     const s = signatureAsString.replace(/\s/g, "");
 
@@ -90,8 +100,6 @@ export class FileSignature {
       buffer.slice(this.offset, this.offset + this.fileSignature.length),
     );
 
-    console.log({ data });
-
     const relevantBytes: number[] = [];
 
     for (let i = 0; i < this.fileSignature.length; i += 1) {
@@ -107,7 +115,7 @@ export class FileSignature {
         return false;
       }
 
-      relevantBytes.push(i);
+      relevantBytes.push(i + this.offset);
     }
 
     return {
@@ -124,6 +132,168 @@ export const FILE_SIGANTURE_SCRIPT_FILE = new FileSignature(
   "23 21",
   0,
   "Script File",
+);
+
+export const FILE_SIGNATURE_CLARIS_WORKS = new FileSignature(
+  "02 00 5a 57 52 54 00 00 00 00 00 00 00 00 00 00",
+  0,
+  "Claris Works Document",
+);
+
+export const FILE_SIGNATURE_LOTUS_123_V1 = new FileSignature(
+  "00 00 02 00 06 04 06 00 08 00 00 00 00 00",
+  0,
+  "Lotus 1-2-3 speadsheet V1",
+);
+
+export const FILE_SIGNATURE_LOTUS_123_V3 = new FileSignature(
+  "00 00 1A 00 00 10 04 00 00 00 00 00",
+  0,
+  "Lotus 1-2-3 speadsheet V3",
+);
+
+export const FILE_SIGNATURE_LOTUS_123_V4_5 = new FileSignature(
+  "00 00 1A 00 02 10 04 00 00 00 00 00",
+  0,
+  "Lotus 1-2-3 speadsheet V4 / V5",
+);
+
+export const FILE_SIGNATURE_LOTUS_123_V9 = new FileSignature(
+  "00 00 1A 00 05 10 04",
+  0,
+  "Lotus 1-2-3 speadsheet V9",
+);
+
+export const FILE_SIGNATURE_AMIGA_HUNK_EXECUTABLE = new FileSignature(
+  "00 00 03 F3",
+  0,
+  "Amiga Hunk Executable",
+);
+
+export const FILE_SIGNATURE_QUARK_EXPRESS = new FileSignature(
+  "00 00 4D 4D 58 50 52",
+  0,
+  "Quark Express Document",
+);
+
+export const FILE_SIGNATURE_PASSWORD_GORILLA_PASSWORD_DATABASE =
+  new FileSignature("50 57 53 33", 0, "Password Gorilla Password Database");
+
+export const FILE_SIGNATURE_LIBCAP_FILE = new FileSignature(
+  "A1 B2 C3 D4",
+  0,
+  "Libcap File",
+);
+
+export const FILE_SIGNATURE_LIBCAP_NS_FILE = new FileSignature(
+  "A1 B2 3C 4D",
+  0,
+  "Libcap File (nanosecond resolution)",
+);
+
+export const FILE_SIGNATURE_PCAP_FILE = new FileSignature(
+  "0A 0D 0D 0A",
+  0,
+  "PCAP Next Generation Dump File",
+);
+
+export const FILE_SIGNATURE_RPM_PACKAGE = new FileSignature(
+  "ED AB EE DB",
+  0,
+  "RedHat Package Manager Package",
+);
+
+export const FILE_SIGNATURE_SQLITE_3 = new FileSignature(
+  "53 51 4C 69 74 65 20 66 6F 72 6D 61 74 20 33 00",
+  0,
+  "SQLite 3 Database",
+);
+
+export const FILE_SIGNATURE_AMAZON_KINDLE_UPDATE = new FileSignature(
+  "53 50 30 31",
+  0,
+  "Amazon Kindle Update Package",
+);
+
+export const FILE_SIGNATURE_INTERNAL_WAD = new FileSignature(
+  "49 57 41 44",
+  0,
+  "Internal WAD",
+  "Doom resource file",
+);
+
+export const FILE_SIGNATURE_IBM_STORYBOARD_BITMAP = new FileSignature(
+  "00",
+  0,
+  "IBM Storyboard Bitmap",
+);
+
+export const FILE_SIGNATURE_PALM_PILOT_DATABASE_DOCUMENT = new FileSignature(
+  "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+  11,
+  "Palm Pilot Database/Document",
+);
+
+export const FILE_SIGNATURE_PALM_DESKTOP_CALENDAR_ARCHIVE = new FileSignature(
+  "BE BA FE CA",
+  0,
+  "Palm Desktop Calendar Archive",
+);
+
+export const FILE_SIGNATURE_PALM_DESKTOP_TO_DO_ARCHIVE = new FileSignature(
+  "00 01 42 44",
+  0,
+  "Palm Desktop To Do Archive",
+);
+
+export const FILE_SIGNATURE_PALM_DESKTOP_CALENDAR_ARCHIVE_2 = new FileSignature(
+  "00 01 44 54",
+  0,
+  "Palm Desktop Calendar Archive",
+);
+
+export const FILE_SIGNATURE_TELEGRAM_DESKTOP_FILE = new FileSignature(
+  "54 44 46 24",
+  0,
+  "Telegram Desktop File",
+);
+
+export const FILE_SIGNATURE_TELEGRAM_DESKTOP_FILE_ENCRYPTED = new FileSignature(
+  "54 44 45 46",
+  0,
+  "Telegram Desktop File (Encrypted)",
+);
+
+export const FILE_SIGNATURE_PALM_DESKTOP_DATA = new FileSignature(
+  "00 01 00 00",
+  0,
+  "Palm Desktop Data (Access format)",
+);
+
+export const FILE_SIGNATURE_COMPUTER_ICON_ENCODED_ICO = new FileSignature(
+  "00 00 01 00",
+  0,
+  "Computer Icon (ICO)",
+);
+
+export const FILE_SIGNATURE_APPLE_ICON_IMAGE = new FileSignature(
+  "69 63 6e 73",
+  0,
+  "Apple Icon Image",
+);
+
+export const FILE_SIGNATURE_3G_PARTNERSHIP_PROJECT = new FileSignature(
+  "66 74 79 70 33 67",
+  4,
+  "3G Partnership Project",
+  "3GPP and 3GPP2",
+);
+
+export const FILE_SIGNATURE_HEIC = new FileSignature(
+  "66 74 79 70 68 65 69 63",
+  4,
+  "HEIC",
+  "High Efficiency Image Format",
 );
 
 export const FILE_SIGNATURE_GIF = new FileSignature(
