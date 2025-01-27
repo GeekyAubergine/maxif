@@ -11,6 +11,7 @@ export type FileSignatureMatch = {
   readonly name: string;
   readonly relevantBytes: number[];
   readonly signatureAsString: string;
+  readonly signatureOffset: number;
 };
 
 export type FileSignatureMatchResult = FileSignatureMatch | false;
@@ -122,6 +123,7 @@ export class FileSignature {
       name: this.name,
       relevantBytes,
       signatureAsString: this.signatureAsString,
+      signatureOffset: this.offset,
     };
   }
 }

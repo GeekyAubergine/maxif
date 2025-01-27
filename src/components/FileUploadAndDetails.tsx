@@ -45,6 +45,10 @@ export default function FileUploadAndDetails({
                 label="File Signature"
                 value={fileSignatureMatchResult.signatureAsString}
               />
+              <DataAndLabel
+                label="File Signature Offset"
+                value={String(fileSignatureMatchResult.signatureOffset)}
+              />
             </>
           )}
         </div>
