@@ -758,12 +758,24 @@ export const FILE_SIGNATURE_MS_WINDOWS_HELP_FILE = new FileSignature(
 
 export const FILE_SIGNATURE_PDF = new FileSignature("25 50 44 46 2D", 0, "PDF");
 
-// 0-----
+export const FILE_SIGNATURE_ADVANCED_SYSTEMS_FORMAT = new FileSignature(
+  "30 26 B2 75 8E 66 CF 11 A6 D9 00 AA 00 62 CE 6C",
+  0,
+  "Advanced Systems Format",
+);
+
+export const FILE_SIGNATURE_MS_SYSTEM_DEPLOYMENT_IMAGE = new FileSignature(
+  "24 53 44 49 30 30 30 31",
+  0,
+  "Microsoft System Deployment Image",
+);
+
+export const FILE_SIGNATURE_OGG = new FileSignature("4F 67 67 53", 0, "Ogg");
 
 export const FILE_SIGNATURE_PHOTOSHOP = new FileSignature(
   "38 42 50 53",
   0,
-  "Adobe Photoshop",
+  "Adobe Photoshop document file",
 );
 
 export const FILE_SIGNATURE_WAV = new FileSignature(
@@ -800,6 +812,66 @@ export const FILE_SIGNATURE_MP3 = new FileSignature("49 44 33", 0, "MP3");
 
 export const FILE_SIGNATURE_BITMAP = new FileSignature("42 4D", 0, "Bitmap");
 
+export const FILE_SIGNATURE_ISO_9660_CD_ROM = new FileSignature(
+  "43 44 30 30 31",
+  0x8001,
+  "ISO 9660 CD-ROM",
+);
+
+export const FILE_SIGNATURE_CDI_CD_IMAGE = new FileSignature(
+  "43 44 30 30 31",
+  0x5eac9,
+  "CD-i CD Image",
+);
+
+export const FILE_SIGNATURE_NINTENDO_GAME_AND_WATCH_IMAGE = new FileSignature(
+  "6D 61 69 6E 2E 62 73",
+  0,
+  "Nintendo Game & Watch Image",
+);
+
+export const FILE_SIGNATURE_NES = new FileSignature(
+  "4E 45 53",
+  0,
+  "Nintendo Entertainment System ROM",
+);
+
+export const FILE_SIGNATURE_COMMODORE_64_D64 = new FileSignature(
+  "A0 32 41 A0 A0 A0",
+  0x165a4,
+  "Commodore 64 1541 Disk Image (D64)",
+);
+
+export const FILE_SIGNATURE_COMMODORE_64_G64 = new FileSignature(
+  "47 53 52 2D 31 35 34 31",
+  0,
+  "Commodore 64 1571 Disk Image (G64)",
+);
+
+export const FILE_SIGNATURE_COMMODORE_64_D81 = new FileSignature(
+  "A0 33 44 A0 A0",
+  0x61819,
+  "Commodore 64 1581 Disk Image (D81)",
+);
+
+export const FILE_SIGNATURE_COMMODORE_64_TAPE = new FileSignature(
+  "43 36 34 20 74 61 70 65 20 69 6D 61 67 65 20 66 69 6C 65",
+  0,
+  "Commodore 64 Tape Image",
+);
+
+export const FILE_SIGNATURE_COMMODORE_64_CARTRIDGE = new FileSignature(
+  "43 36 34 20 43 41 52 54 52 49 44 47 45 20 20 20",
+  0,
+  "Commodore 64 Cartridge Image",
+);
+
+export const FILE_SIGNATURE_FLEXIBLE_IMAGE_TRANSPORT_SYSTEM = new FileSignature(
+  "53 49 4D 50 4C 45 20 20 3D 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 54",
+  0,
+  "Flexible Image Transport System",
+);
+
 export const FILE_SIGNATURE_FLAC = new FileSignature("66 4C 61 43", 0, "FLAC");
 
 export const FILE_SIGNATURE_MIDI = new FileSignature("4D 54 68 64", 0, "MIDI");
@@ -809,6 +881,83 @@ export const FILE_SIGNATURE_COMPOUND_FILE_BINARY = new FileSignature(
   0,
   "Compound File Binary used by Microsoft",
 );
+
+export const FILE_SIGNATURE_DALVIK = new FileSignature(
+  "64 65 78 0A 30 33 35 00",
+  0,
+  "Dalvik Executable",
+);
+
+export const FILE_SIGNATURE_VMDK = new FileSignature("4B 44 4D", 0, "VMDK");
+
+export const FILE_SIGNATURE_VMWARE_4_VIRTUAL_DISK = new FileSignature(
+  "23 20 44 69 73 6B 20 44 65 73 63 72 69 70 74 6F",
+  0,
+  "VMware 4 Virtual Disk (split)",
+);
+
+export const FILE_SIGNATURE_GOOGLE_CHROME_EXTENSION = new FileSignature(
+  "43 72 32 34",
+  0,
+  "Google Chrome Extension or packaged app",
+);
+
+export const FILE_SIGNATURE_FREEHAND_8 = new FileSignature(
+  "41 47 44 33",
+  0,
+  "FreeHand 8 document",
+);
+
+export const FILE_SIGNATURE_APPLE_WORKS_5 = new FileSignature(
+  "05 07 00 00 42 4F 42 4F 05 07 00 00 00 00 00 00 00 00 00 00 00 01",
+  0,
+  "AppleWorks 5 document",
+);
+
+export const FILE_SIGNATURE_APPLE_WORKS_6 = new FileSignature(
+  "06 07 E1 00 42 4F 42 4F 06 07 E1 00 00 00 00 00 00 00 00 00 00 01",
+  0,
+  "AppleWorks 6 document",
+);
+
+export const FILE_SIGNATURE_ROXIO_TOAST_CD_IMAGE_1 = new FileSignature(
+  "45 52 02 00 00 00",
+  0,
+  "Roxio Toast CD Image",
+);
+
+export const FILE_SIGNATURE_ROXIO_TOAST_CD_IMAGE_2 = new FileSignature(
+  "8B 45 52 02 00 00 00",
+  0,
+  "Roxio Toast CD Image",
+);
+
+export const FILE_SIGNATURE_APPLE_DISK_IMAGE = new FileSignature(
+  "6B 6F 6C 79",
+  0,
+  "Apple Disk Image",
+);
+
+export const FILE_SIGNATURE_EXTENSIBLE_ARCHIVE = new FileSignature(
+  "78 61 72 21",
+  0,
+  "eXtensible ARchive",
+);
+
+export const FILE_SIGNATURE_WINDOWS_FILE_AND_SETTINGS_TRANSFER_REPOSITORY =
+  new FileSignature(
+    "50 4D 4F 43 43 4D 4F 43",
+    0,
+    "Windows File and Settings Transfer Repository",
+  );
+
+export const FILE_SIGNATURE_NES_2 = new FileSignature(
+  "4E 45 53 1A",
+  0,
+  "Nintendo Entertainment System ROM",
+);
+
+// ---
 
 export const FILE_SIGNATURE_FLIF = new FileSignature("46 4C 49 46", 0, "FLIF");
 
