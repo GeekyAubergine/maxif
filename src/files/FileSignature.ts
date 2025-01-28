@@ -541,7 +541,72 @@ export const FILE_SIGNATURE_AIFF = new FileSignature(
   "AIFF",
 );
 
-// here
+export const FILE_SIGNATURE_LZIP = new FileSignature(
+  "4C 5A 49 50",
+  0,
+  "lzip compressed file",
+);
+
+export const FILE_SIGNATURE_CPIO_ARCHIVE = new FileSignature(
+  "30 37 30 37 30 37",
+  0,
+  "cpio archive file",
+);
+
+export const FILE_SIGNATURE_DOS_MZ_EXECUTABLE = new FileSignature(
+  "4D 5A",
+  0,
+  "DOS MZ executable",
+  "This might also include it's decendents NE and PE",
+);
+
+export const FILE_SIGNATURE_SMART_SNIFF_PACKETS = new FileSignature(
+  "53 4D 53 4E 46 32 30 30",
+  0,
+  "Smart Sniff Packets",
+);
+
+export const FILE_SIGNATURE_DOS_ZM_EXECUTABLE = new FileSignature(
+  "5A 4D",
+  0,
+  "DOS ZM executable",
+);
+
+export const FILE_SIGNATURE_ZIP_NORMAL = new FileSignature(
+  "50 4B 03 04",
+  0,
+  "zip file",
+);
+
+export const FILE_SIGNATURE_ZIP_EMPTY = new FileSignature(
+  "50 4B 05 06",
+  0,
+  "zip file (empty archive)",
+);
+
+export const FILE_SIGNATURE_ZIP_SPANNED = new FileSignature(
+  "50 4B 07 08",
+  0,
+  "zip file (spanned archive)",
+);
+
+export const FILE_SIGNATURE_ROSHA_ARCHIVE_V1_5 = new FileSignature(
+  "52 61 72 21 1A 07 00",
+  0,
+  "ROSHA Archive >= v1.5",
+);
+
+export const FILE_SIGNATURE_ROSHA_ARCHIVE_V5 = new FileSignature(
+  "52 61 72 21 1A 07 01 00",
+  0,
+  "ROSHA Archive >= v5",
+);
+
+export const FILE_SIGNATURE_EXECUTABLE_AND_LINKABLE_FORMAT = new FileSignature(
+  "7F 45 4C 46",
+  0,
+  "Executable and Linkable Format",
+);
 
 export const FILE_SIGNATURE_PNG = new FileSignature(
   "89 50 4E 47 0D 0A 1A 0A",
@@ -549,7 +614,151 @@ export const FILE_SIGNATURE_PNG = new FileSignature(
   "PNG",
 );
 
+export const FILE_SIGNATURE_HIERARCHICAL_DATA_FORMAT_V4 = new FileSignature(
+  "0E 03 13 01",
+  0,
+  "Hierarchical Data Format v4",
+);
+
+export const FILE_SIGNATURE_HIERARCHICAL_DATA_FORMAT_V5 = new FileSignature(
+  "89 48 44 46 0D 0A 1A 0A",
+  0,
+  "Hierarchical Data Format v5",
+);
+
+export const FILE_SIGNATURE_CPM3 = new FileSignature("C9", 0, "CP/M 3");
+
+export const FILE_SIGNATURE_JAVAS_CLASS = new FileSignature(
+  "CA FE BA BE",
+  0,
+  "Java's class file",
+);
+
+export const FILE_SIGNATURE_UTF8 = new FileSignature("EF BB BF", 0, "UTF-8");
+
+export const FILE_SIGNATURE_UTF_16_LE = new FileSignature(
+  "FF FE",
+  0,
+  "UTF-16 Little Edian",
+);
+
+export const FILE_SIGNATURE_UTF_16_BE = new FileSignature(
+  "FE FF",
+  0,
+  "UTF-16 Big Edian",
+);
+
+export const FILE_SIGNATURE_UTF_32_LE = new FileSignature(
+  "FF FE 00 00",
+  0,
+  "UTF-32 Little Edian",
+);
+
+export const FILE_SIGNATURE_UTF_32_BE = new FileSignature(
+  "00 00 FE FF",
+  0,
+  "UTF-32 Big Edian",
+);
+
+export const FILE_SIGNATURE_UTF7_1 = new FileSignature(
+  "2B 2F 76 38",
+  0,
+  "UTF-7",
+);
+
+export const FILE_SIGNATURE_UTF7_2 = new FileSignature(
+  "2B 2F 76 39",
+  0,
+  "UTF-7",
+);
+
+export const FILE_SIGNATURE_UTF7_3 = new FileSignature(
+  "2B 2F 76 2B",
+  0,
+  "UTF-7",
+);
+
+export const FILE_SIGNATURE_UTF7_4 = new FileSignature(
+  "2B 2F 76 2F",
+  0,
+  "UTF-7",
+);
+
+export const FILE_SIGNATURE_SCSU = new FileSignature(
+  "0E FE FF",
+  0,
+  "SCSU byte order mark text",
+);
+
+export const FILE_SIGNATURE_UTF_EBCDIC = new FileSignature(
+  "DD 73 66 73",
+  0,
+  "UTF-EBCDIC",
+);
+
+export const FILE_SIGNATURE_MACH_O_32BIT = new FileSignature(
+  "FE ED FA CE",
+  0,
+  "Mach-O 32-bit",
+);
+
+export const FILE_SIGNATURE_MACH_O_64BIT = new FileSignature(
+  "FE ED FA CF",
+  0,
+  "Mach-O 64-bit",
+);
+
+export const FILE_SIGNATURE_JAVAKEY_STORE = new FileSignature(
+  "FE ED FE ED",
+  0,
+  "JKS Javakey Store",
+);
+
+export const FILE_SIGNATURE_MAC_O_32BIT_REVERSE = new FileSignature(
+  "CE FA ED FE",
+  0,
+  "Mach-0 32-bit reverse",
+);
+
+export const FILE_SIGNATURE_MAC_O_64BIT_REVERSE = new FileSignature(
+  "CF FA ED FE",
+  0,
+  "Mach-0 64-bit reverse",
+);
+
+export const FILE_SIGNATURE_POST_SCRIPT = new FileSignature(
+  "25 21 50 53",
+  0,
+  "PostScript document",
+);
+
+export const FILE_SIGNATURE_ENCAPSULATED_POST_SCRIPT_V3 = new FileSignature(
+  "25 21 50 53 2D 41 64 6F 62 65 2D 33 2E 30 20 45 50 53 46 2D 33 2E 30",
+  0,
+  "Encapsulated PostScript v3",
+);
+
+export const FILE_SIGNATURE_ENCAPSULATED_POST_SCRIPT_V3_1 = new FileSignature(
+  "25 21 50 53 2D 41 64 6F 62 65 2D 33 2E 31 20 45 50 53 46 2D 33 2E 30",
+  0,
+  "Encapsulated PostScript v3.1",
+);
+
+export const FILE_SIGNATURE_MS_WINDOWS_HTML_HELP = new FileSignature(
+  "49 54 53 46 03 00 00 00 60 00 00 00",
+  0,
+  "MS Windows HTMLHelp Data",
+);
+
+export const FILE_SIGNATURE_MS_WINDOWS_HELP_FILE = new FileSignature(
+  "3F 5F",
+  0,
+  "Windows 3.x/95/98 Help File",
+);
+
 export const FILE_SIGNATURE_PDF = new FileSignature("25 50 44 46 2D", 0, "PDF");
+
+// 0-----
 
 export const FILE_SIGNATURE_PHOTOSHOP = new FileSignature(
   "38 42 50 53",
