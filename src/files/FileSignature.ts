@@ -1311,7 +1311,120 @@ export const FILE_SIGNATURE_ROBLOX_PLACE = new FileSignature(
   "Roblox Place",
 );
 
-// --- Here
+export const FILE_SIGNATURE_PHOTOCAP_OBJECT_TEMPLATE = new FileSignature(
+  "65 87 78 56",
+  0,
+  "PhotoCap Object Template",
+)
+
+export const FILE_SIGANTURE_PHOTOCAP_VECTOR = new FileSignature(
+  "55 55 AA AA",
+  0,
+  "PhotoCap Vector",
+)
+
+export const FILE_SIGNATURE_PHOTOCAP_TEMPLATE = new FileSignature(
+  "78 56 34",
+  0,
+  "PhotoCap Template",
+)
+
+export const FILE_SIGNATURE_APACHE_PRAQUET_COLUMNAR = new FileSignature(
+  "50 41 52 31",
+  0,
+  "Apache Parquet columnar file",
+)
+
+export const FILE_SIGNATURE_EMULATOR_EMAXSYNTH_SAMPLES = new FileSignature(
+  "45 4D 58 32",
+  0,
+  "Emulator Emaxsynth Samples",
+)
+
+export const FILE_SIGNATURE_LUA_BYTECODE = new FileSignature(
+  "45 4D 55 33",
+  0,
+  "Lua bytecode",
+)
+
+export const FILE_SIGNATURE_FILE_ALIAS = new FileSignature(
+  "62 6F 6F 6B 00 00 00 00 6D 61 72 6B 00 00 00 00",
+  0,
+  "File Alias",
+)
+
+export const FILE_SIGNATURE_MICROSOFT_ZOME_IDENTIFIER = new FileSignature(
+  "5B 5A 6F 6E 65 54 72 61 6E 73 66 65 72 5D",
+  0,
+  "Microsoft Zone Identifier for URL Security Zones",
+)
+
+export const FILE_SIGNATURE_EMAIL_MESSAGE_VAR5 = new FileSignature(
+  "52 65 63 65 69 76 65 64 3A",
+  0,
+  "Email Message var5",
+)
+
+export const FILE_SIGNATURE_TABLEAU_DATASTORE = new FileSignature(
+  "20 02 01 62 A0 1E AB 07 02 00 00 00",
+  0,
+  "Tableau Datastore",
+)
+
+export const FILE_SIGNATURE_KDB = new FileSignature(
+  "37 48 03 02 00 00 00 00 58 35 30 39 4B 45 59",
+  0,
+  "KDB",
+)
+
+export const FILE_SIGANTURE_PGP = new FileSignature(
+  "85 ?? ?? 03",
+  0,
+  "PGP",
+)
+
+export const FILE_SIGNATURE_ZSTANDARD_COMPRESS = new FileSignature(
+  "28 B5 2F FD",
+  0,
+  "Zstandard Compress",
+)
+
+export const FILE_SIGNATURE_QUICK_ZIP_RS_COMPRESSED = new FileSignature(
+  "52 53 56 4B 44 41 54 41",
+  0,
+  "QuickZip rs compressed archive",
+)
+
+export const FILE_SIGNATURE_SMILE = new FileSignature(
+  "3A 29 0A",
+  0,
+  "Smile",
+)
+
+export const FILE_SIGNATURE_PREFERRED_EXECUTABLE_FORMAT = new FileSignature(
+  "4A 6F 79 21",
+  0,
+  "Preferred Executable Format",
+)
+
+export const FILE_SIGNATURE_VPK_FILE = new FileSignature(
+  "34 12 AA 55",
+  0,
+  "VPK file",
+  "Used by Source Engine",
+)
+
+export const FILE_SIGNATURE_ACE_COMPRESSED = new FileSignature(
+  "2A 2A 41 43 45 2A 2A",
+  7,
+  "ACE compressed file",
+)
+
+export const FILE_SIGNATURE_ARJ = new FileSignature(
+  "60 EA",
+  0,
+  "ARJ",
+)
 
 export const FILE_SIGNATURE_JPEG_XL_1 = new FileSignature(
   "00 00 00 0C 4A 58 4C 20 0D 0A 87 0A",
