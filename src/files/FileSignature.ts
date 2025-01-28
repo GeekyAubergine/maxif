@@ -1197,7 +1197,17 @@ export const FILE_SIGNATURE_WEBP = new FileSignature(
   "WebP",
 );
 
-// --- here
+export const FILE_SIGNATURE_DAS_UBOOT = new FileSignature(
+  "27 05 19 56",
+  0,
+  "Das U-Boot",
+);
+
+export const FILE_SIGNATURE_RTF = new FileSignature(
+  "7B 5C 72 74 66 31",
+  0,
+  "Rich Text Format (RTF)",
+);
 
 export const FILE_SIGNATURE_MPEG_2_PART_1 = new FileSignature(
   "47",
@@ -1205,10 +1215,16 @@ export const FILE_SIGNATURE_MPEG_2_PART_1 = new FileSignature(
   "MPEG-2 Part 1",
 );
 
-export const FILE_SIGNATURE_MPEG_1_PART_1 = new FileSignature(
+export const FILE_SIGNATURE_MICROSOFT_TAPE = new FileSignature(
+  "54 41 50 45",
+  0,
+  "Microsoft Tape Format",
+);
+
+export const FILE_SIGNATURE_MPEG_PROGRAM_STREAM = new FileSignature(
   "00 00 01 BA",
   0,
-  "MPEG-1 Part 1 and MPEG-2 Part 1",
+  "MPEG Program Stream",
 );
 
 export const FILE_SIGNATURE_MPEG_VIDEO = new FileSignature(
@@ -1229,11 +1245,73 @@ export const FILE_SIGNATURE_MPEG_4_VIDEO = new FileSignature(
   "MPEG-4 Video",
 );
 
+export const FILE_SIGNATURE_ZLIB_NO_COMPRESSION = new FileSignature(
+  "78 01",
+  0,
+  "zlib (no compression)",
+);
+
+export const FILE_SIGNATURE_ZLIB_BEST_SPEED = new FileSignature(
+  "78 5E",
+  0,
+  "zlib (best speed)",
+);
+
+export const FILE_SIGNATURE_ZLIB_DEFAULT_COMPRESSION = new FileSignature(
+  "78 9C",
+  0,
+  "zlib (default compression)",
+);
+
+export const FILE_SIGNATURE_ZLIB_BEST_COMPRESSION = new FileSignature(
+  "78 DA",
+  0,
+  "zlib (best compression)",
+);
+
+export const FILE_SIGNATURE_ZLIB_NO_COMPRESSION_WITH_DICTIONARY =
+  new FileSignature("78 20", 0, "zlib (no compression with dictionary)");
+
+export const FILE_SIGNATURE_ZLIB_BEEST_SPEED_WITH_DICTIONARY =
+  new FileSignature("78 7D", 0, "zlib (best speed with dictionary)");
+
+export const FILE_SIGNATURE_ZLIB_DEFAULT_COMPRESSION_WITH_DICTIONARY =
+  new FileSignature("78 BB", 0, "zlib (default compression with dictionary)");
+
+export const FILE_SIGNATURE_ZLIB_BEST_COMPRESSION_WITH_DICTIONARY =
+  new FileSignature("78 F9", 0, "zlib (best compression with dictionary)");
+
+export const FILE_SIGNATURE_LZFSE = new FileSignature(
+  "62 76 78 32",
+  0,
+  "LZFSE style data compression using Finite State Entropy",
+)
+
+export const FILE_SIGNATURE_APACHE_OPTIMIZED_ROW_COLUMNAR = new FileSignature(
+  "4F 52 43",
+  0,
+  "Apache Optimized Row Columnar (ORC)",
+)
+
+export const FILE_SIGNATURE_APACHE_ARVO = new FileSignature(
+  "4F 62 6A 01",
+  0,
+  "Apache Avro binary file",
+)
+
+export const FILE_SIGNATURE_RCFILE_COLUMNAR = new FileSignature(
+  "53 45 51 36",
+  0,
+  "RCFile columnar file",
+)
+
 export const FILE_SIGNATURE_ROBLOX_PLACE = new FileSignature(
   "3C 72 6F 62 6C 6F 78 21",
   0,
   "Roblox Place",
 );
+
+// --- Here
 
 export const FILE_SIGNATURE_JPEG_XL_1 = new FileSignature(
   "00 00 00 0C 4A 58 4C 20 0D 0A 87 0A",
