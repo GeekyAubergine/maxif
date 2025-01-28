@@ -957,9 +957,81 @@ export const FILE_SIGNATURE_NES_2 = new FileSignature(
   "Nintendo Entertainment System ROM",
 );
 
-// ---
+export const FILE_SIGNATURE_TAR = new FileSignature(
+  "75 73 74 61 72 00 30 30",
+  257,
+  "tar",
+);
+
+export const FILE_SIGNATURE_TAR_2 = new FileSignature(
+  "75 73 74 61 72 20 20 00",
+  257,
+  "tar",
+);
+
+export const FILE_SIGNATURE_OAR = new FileSignature(
+  "4F 41 52 ??",
+  0,
+  "OAR file archive format",
+);
+
+export const FILE_SIGNATURE_OPEN_PORTABLE_VOXEL = new FileSignature(
+  "74 6F 78 33",
+  0,
+  "Open source portable voxel file",
+);
+
+export const FILE_SIGNATURE_MAGIC_LANTERN_VIDEO = new FileSignature(
+  "4D 4C 56 49",
+  0,
+  "Magic Lantern Video",
+);
+
+export const FILE_SIGNATURE_WINDOWS_UPDATE_BINARY_DELTA_COMPRESSION = new FileSignature(
+  "44 43 4D 01 50 41 33 30 50 41 33 30",
+  0,
+  "Windows Update Binary Delta Compression",
+)
+
+export const FILE_SIGNATURE_7_ZIP = new FileSignature(
+  "37 7A BC AF 27 1C",
+  0,
+  "7-Zip",
+)
+
+export const FILE_SIGNATURE_GZIP = new FileSignature(
+  "1F 8B",
+  0,
+  "GZIP",
+)
+
+export const FILE_SIGNATURE_XZ_COMPRESSION_UTILITY_LZMA2 = new FileSignature(
+  "FD 37 7A 58 5A 00",
+  0,
+  "XZ compression utility (LZMA2)",
+)
+
+export const FILE_SIGNATURE_LZ4_FRAME_FORMAT = new FileSignature(
+  "04 22 4D 18",
+  0,
+  "LZ4 Frame Format",
+)
+
+export const FILE_SIGNATURE_MS_CABINET = new FileSignature(
+  "4D 53 43 46",
+  0,
+  "Microsoft Cabinet",
+)
+
+export const FILE_SIGNATURE_MICROSOFT_COMPRESSED_QUANTUM = new FileSignature(
+  "53 5A 44 44 88 F0 27 33",
+  0,
+  "Microsoft compressed file in Quantum format",
+)
 
 export const FILE_SIGNATURE_FLIF = new FileSignature("46 4C 49 46", 0, "FLIF");
+
+// ---
 
 export const FILE_SIGNATURE_WEBP = new FileSignature(
   "52 49 46 46 ?? ?? ?? ?? 57 45 42 50",

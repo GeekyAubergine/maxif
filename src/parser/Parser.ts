@@ -1,4 +1,5 @@
 import { DataViewWithCursor } from "../files/FileDataReader";
+import { ParserOAR } from "./ParserOAR";
 import { ParserWebP } from "./ParserWebP";
 
 export class ParserError extends Error {
@@ -29,4 +30,5 @@ export interface Parser {
 
 export const PARSERS: Record<string, Parser> = {};
 
+new ParserOAR().register();
 new ParserWebP().register();
