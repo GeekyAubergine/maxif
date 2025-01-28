@@ -2,8 +2,11 @@ import { useCallback, useMemo } from "react";
 import cx from "classnames";
 import { ParserError, ParsingResult } from "../parser/Parser";
 import DataAndLabel from "./DataAndLabel";
+import { FileSignatureMatchResult } from "../files/FileSignature";
 
 type Props = {
+  file: File | null;
+  fileSignatureMatchResult: FileSignatureMatchResult;
   parsingResult: ParsingResult | null;
   className?: string;
 };
@@ -13,7 +16,12 @@ type MetadataElement = {
   value: string;
 };
 
-export default function MetadataDisplay({ parsingResult, className }: Props) {
+export default function FileDataDisplay({
+  file,
+  fileSignatureMatchResult,
+  parsingResult,
+  className,
+}: Props) {
   const metadataElements: MetadataElement[] = useMemo(() => {
     if (parsingResult == null) {
       return [];
@@ -42,9 +50,30 @@ export default function MetadataDisplay({ parsingResult, className }: Props) {
   );
 
   return (
-    <div className={cx("metadata-display", className)}>
-      <h3>Metadata</h3>
-      <div className="metadata-elements">
+    <div className={cx("file-data-display", className)}>
+      <h3>File Data</h3>
+      <div className="file-data-elements">
+        {file != null && (
+          <>
+            <DataAndLabel label="File Name" value={file?.name} />
+          </>
+        )}
+        {fileSignatureMatchResult !== false && (
+          <>
+            <DataAndLabel
+              label="File Type"
+              value={fileSignatureMatchResult.name}
+            />
+            <DataAndLabel
+              label="File Signature"
+              value={fileSignatureMatchResult.signatureAsString}
+            />
+            <DataAndLabel
+              label="File Signature Offset"
+              value={String(fileSignatureMatchResult.signatureOffset)}
+            />
+          </>
+        )}
         {metadataElements.map(renderMetadataElement)}
       </div>
     </div>

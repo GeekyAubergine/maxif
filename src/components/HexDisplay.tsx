@@ -50,6 +50,9 @@ export default function HexDisplay({
     <div className={cx("hex-display", className)}>
       <h3>Hex</h3>
       <div className="bytes">{bufferElements}</div>
+      <p className="mt-4 secondary">
+        Blue indicates bytes used in the file signature
+      </p>
     </div>
   );
 }

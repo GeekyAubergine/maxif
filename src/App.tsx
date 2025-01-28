@@ -4,7 +4,7 @@ import FileUploadAndDetails from "./components/FileUploadAndDetails";
 import { Parser, PARSERS, ParsingResult } from "./parser/Parser";
 import { DataViewWithCursor } from "./files/FileDataReader";
 import { FileSignature, FileSignatureMatchResult } from "./files/FileSignature";
-import MetadataDisplay from "./components/MetadataDisplay";
+import FileDataDisplay from "./components/FileDataDisplay";
 
 function onFileLoad(
   file: File,
@@ -90,28 +90,27 @@ function App() {
   }, []);
 
   return (
-    <>
+    <main>
       <div className="intro-and-file-upload">
         <div className="intro">
-          <h1>MAXIF</h1>
-          <p>Files sometimes aren't what they seem</p>
-          <p>MAXIF uses file signatures to verify file types</p>
-          <p>It'll also pull any metadata it can find</p>
+          <h1 className="mb-8">MAXIF</h1>
+          <p>File extensions can be misleading</p>
+          <p>MAXIF uses File Signatures and other data to verify file types</p>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <FileUploadAndDetails
-          onDrop={onDrop}
+      <div className="data-container">
+        <FileUploadAndDetails onDrop={onDrop} />
+        <FileDataDisplay
           file={file}
           fileSignatureMatchResult={fileSignatureMatchResult}
+          parsingResult={parsingResult}
         />
         <HexDisplay
           buffer={displayBuffer}
           fileSignatureMatchResult={fileSignatureMatchResult}
         />
-        <MetadataDisplay parsingResult={parsingResult} />
       </div>
-    </>
+    </main>
   );
 }
 
