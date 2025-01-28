@@ -1941,7 +1941,87 @@ export const FILE_SIGNATURE_ARC = new FileSignature(
   "ARC archive file",
 );
 
+export const FILE_SIGNATURE_ARMOURED_PGP_PUBLIC_KEY = new FileSignature(
+  "2d 2d 2d 2d 2d 42 45 47 49 4e 20 50 47 50 20 50 55 42 4c 49 43 20 4b 45 49 20 42 4c 4f 43 4b 2d 2d 2d 2d 2d",
+  0,
+  "Armoured PGP Public Key",
+);
 
+export const FILE_SIGNATURE_WINDOWS_3X_95_HELP_CONTENTS = new FileSignature(
+  "3a 42 61 73 65 20",
+  0,
+  "Windows 3.x/95 Help Contents",
+);
+
+export const FILE_SIGNATURE_VIRTUAL_DUB = new FileSignature(
+  "52 49 46 46 ?? ?? ?? ?? 56 44 52 4d",
+  0,
+  "VirtualDub",
+);
+
+export const FILE_SIGNATURE_TRID = new FileSignature(
+  "52 59 46 46 ?? ?? ?? ?? 54 52 49 44",
+  0,
+  "TrID",
+);
+
+export const FILE_SIGNATURE_COREL_SHOW_4 = new FileSignature(
+  "52 49 46 46 ?? ?? ?? ?? 73 68 77 34",
+  0,
+  "Corel SHOW! 4.0",
+);
+
+export const FILE_SIGNATURE_COREL_SHOW_5 = new FileSignature(
+  "52 49 46 46 ?? ?? ?? ?? 73 68 77 35",
+  0,
+  "Corel SHOW! 5.0",
+);
+
+export const FILE_SIGNATURE_COREL_SHOW_5_PLAYER = new FileSignature(
+  "52 49 46 46 ?? ?? ?? ?? 73 68 72 35",
+  0,
+  "Corel SHOW! 5.0 Player",
+);
+
+export const FILE_SIGNATURE_COREL_SHOW_5_BACKGROUND = new FileSignature(
+  "52 49 46 46 ?? ?? ?? ?? 73 68 62 35",
+  0,
+  "Corel SHOW! 5.0 Background",
+);
+
+export const FILE_SIGNATURE_MARCOMIND_MICROSOFT_MUTLIMEDIA_MOVIE =
+  new FileSignature(
+    "52 49 46 46 ?? ?? ?? ?? 52 4d 4d 50",
+    0,
+    "Marcomind/Microsoft Multimedia Movie",
+  );
+
+export const FILE_SIGNATURE_ASTM_E57 = new FileSignature(
+  "41 53 54 4d 2d 45 35 37",
+  0,
+  "ASTM E57 3D file",
+);
+
+export const FILE_SIGNATURE_CROWDSTRIKE_CHANNEL_FILE = new FileSignature(
+  "aa aa aa aa",
+  0,
+  "CrowdStrike Channel File",
+);
+
+export const FILE_SIGNATURE_UNREAL_ENGINE_COMPRESSED_ASSET_STORAGE =
+  new FileSignature("8C 0A 00", 0, "Unreal Engine Compressed Asset Storage");
+
+export const FILE_SIGNATURE_UNREAL_ENGINE_TABLE_OF_CONTENTS = new FileSignature(
+  "2D 3D 3D 2D 2D 3D 3D 2D 2D 3D 3D 2D 2D 3D 3D 2D",
+  0,
+  "Unreal Engine Table of Contents",
+);
+
+export const FILE_SIGNATURE_COMMODORE_64_BINARY = new FileSignature(
+  "43 36 34 46 69 6C 65 00",
+  0,
+  "Commodore 64 Binary",
+);
 
 // Not on wiki list
 
