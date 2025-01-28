@@ -1701,61 +1701,62 @@ export const FILE_SIGNATURE_AU_AUDIO_FILE = new FileSignature(
   "2E 73 6E 64",
   0,
   "AU Audio File",
-)
+);
 
 export const FILE_SIGNATURE_OPENGL_IRIS_PERFORMER = new FileSignature(
   "DB 0A CE 00",
   0,
   "OpenGL Iris Performer",
-)
+);
 
 export const FILE_SIGNATURE_NOODLESOFT_HAZEL = new FileSignature(
   "48 5a 4c 52 00 00 00 18",
   0,
   "Noodlesoft Hazel",
-)
+);
 
 export const FILE_SIGNATURE_FL_STUDIO_PROJECT = new FileSignature(
-  '46 4C 68 64',
+  "46 4C 68 64",
   0,
   "FL Studio Project",
-)
+);
 
 export const FILE_SIGNATURE_FL_STUDIO_PROJECT_MOBILE = new FileSignature(
   "31 30 4C 46",
   0,
   "FL Studio Project Mobile",
-)
+);
 
-export const FILE_SIGNATURE_VORMETRIC_ENCRYPTION_DPM_V2_1_HEADER = new FileSignature(
-  "52 4b 4d 43 32 31 30",
-  0,
-  "Vormetric Encryption DPM v2.1 Header",
-)
+export const FILE_SIGNATURE_VORMETRIC_ENCRYPTION_DPM_V2_1_HEADER =
+  new FileSignature(
+    "52 4b 4d 43 32 31 30",
+    0,
+    "Vormetric Encryption DPM v2.1 Header",
+  );
 
 export const FILE_SIGNATURE_MICROSOFT_MONEY_FILE = new FileSignature(
   "00 01 00 00 4D 53 49 53 41 4D 20 44 61 74 61 62 61 73 65",
   0,
   "Microsoft Money File",
-)
+);
 
 export const FILE_SIGNATURE_MICROSOFT_ACCESS_2007_DATABASE = new FileSignature(
   "00 01 00 00 53 74 61 6E 64 61 72 64 20 41 43 45 20 44 42",
   0,
   "Microsoft Access 2007 Database",
-)
+);
 
 export const FILE_SIGNATURE_MICROSOFT_ACCESS_DATABASE = new FileSignature(
   "00 01 00 00 53 74 61 6E 64 61 72 64 20 4A 65 74 20 44 42",
   0,
   "Microsoft Access Database",
-)
+);
 
 export const FILE_SIGNATURE_MICROGRAFX_VECTOR_GRAPHIC = new FileSignature(
   "01 FF 02 04 03 02",
   0,
   "Micrografx Vector Graphic",
-)
+);
 
 export const FILE_SIGNATURE_DSS_V2 = new FileSignature(
   "02 64 73 73",
@@ -1768,6 +1769,179 @@ export const FILE_SIGNATURE_DSS_V3 = new FileSignature(
   0,
   "DSS V3",
 );
+
+export const FILE_SIGNATURE_APPROACH_INDEX = new FileSignature(
+  "03 00 00 00 41 50 50 52",
+  0,
+  "Approach Index",
+);
+
+export const FILE_SIGNATURE_ADOBE_INDESIGN_DOCUMENT = new FileSignature(
+  "06 06 ED F5 D8 1D 46 E5 BD 31 EF E7 FE 74 B7 1D",
+  0,
+  "Adobe InDesign Document",
+);
+
+export const FILE_SIGNATURE_MATERIAL_EXCHANGE_FORMAT = new FileSignature(
+  "06 0E 2B 34 02 05 01 01 0D 01 02 01 01 02",
+  0,
+  "Material Exchange Format",
+);
+
+export const FILE_SIGNATURE_SKIN_CRAFTER_SKIN = new FileSignature(
+  "07 53 4B 46",
+  0,
+  "SkinCrafter Skin",
+);
+
+export const FILE_SIGNATURE_DESIGN_TOOLS_2D_DESIGN = new FileSignature(
+  "07 64 74 32 64 64 74 64",
+  0,
+  "Design Tools 2D Design",
+);
+
+export const FILE_SIGNATURE_MULTIBIT_BITCOIN_WALLET = new FileSignature(
+  "0A 16 6F 72 67 2E 62 69 74 63 6F 69 6E 2E 70 72",
+  0,
+  "MultiBit Bitcoin wallet",
+);
+
+export const FILE_SIGNATURE_DESK_MATE_DOCUMENT = new FileSignature(
+  "0D 44 4F 43",
+  0,
+  "DeskMate Document",
+);
+
+export const FILE_SIGNATURE_NERO_CD_COMPILATION = new FileSignature(
+  "0E 4E 65 72 6F 49 53 4F",
+  0,
+  "Nero CD Compilation",
+);
+
+export const FILE_SIGNATURE_DESKMATE_WORKSHEET = new FileSignature(
+  "0E 57 4B 53",
+  0,
+  "DeskMate Worksheet",
+);
+
+export const FILE_SIGNATURE_SIBELIUS_MUSIC_SCORE = new FileSignature(
+  "0F 53 49 42 45 4C 49 55 53",
+  0,
+  "Sibelius Music Score",
+);
+
+export const FILE_SIGNATURE_MICROSOFT_DEVELOPER_STUDIO_PROJECT =
+  new FileSignature(
+    "23 20 4D 69 63 72 6F 73 6F 66 74 20 44 65 76 65 6C 6F 70 65 72 20 53 74 75 64 69 6F",
+    0,
+    "Microsoft Developer Studio Project",
+  );
+
+export const FILE_SIGNATURE_ADAPTIVE_MULTI_RATE_ACELP = new FileSignature(
+  "23 21 41 4D 52",
+  0,
+  "Adaptive Multi-Rate ACELP",
+);
+
+export const FILE_SIGNATURE_SKYPE_AUDIO_COMPRESSION = new FileSignature(
+  "23 21 53 49 4C 4B 0A",
+  0,
+  "Skype audio compression",
+);
+
+export const FILE_SIGNATURE_RADIANCE_HIGH_DYNAMIC_RANGE_IMAGE =
+  new FileSignature(
+    "23 3F 52 41 44 49 41 4E 43 45 0A",
+    0,
+    "Radiance High Dynamic Range Image",
+  );
+
+export const FILE_SIGNATURE_VBSCRIPT_ENCODED = new FileSignature(
+  "23 40 7E 5E",
+  0,
+  "VBScript Encoded Script File",
+);
+
+export const FILE_SIGNATURE_MIKRO_TIK_WINBOX_CONNECTION_DATABASE =
+  new FileSignature("0D F0 1D C0	", 0, "MikroTik WinBox Connection Database");
+
+export const FILE_SIGNATURE_MULTIMEDIA_PLAYLIST = new FileSignature(
+  "23 45 58 54 4D 33 55",
+  0,
+  "Multimedia Playlist",
+);
+
+export const FILE_SIGNATURE_M2_ARCHIVE = new FileSignature(
+  "6D 64 66 00",
+  0,
+  "M2 Archive",
+);
+
+export const FILE_SIGNATURE_CAPCOM_RE_ENGINE_GAME_DATA = new FileSignature(
+  "4B 50 4B 41",
+  0,
+  "Capcom RE Engine Game Data",
+);
+
+export const FILE_SIGNATURE_CAPCOM_MT_FRAMEWORK_GAME_DATA = new FileSignature(
+  "41 52 43",
+  0,
+  "Capcom MT Framework Game Data",
+);
+
+export const FILE_SIGNATURE_INTERLEAF_PRINTER_LEAF_WORLDVIEW_DOCUMENT =
+  new FileSignature(
+    "D0 4F 50 53",
+    0,
+    "Interleaf Printer Leaf/WorldView Document",
+  );
+
+export const FILE_SIGNATURE_NLFTI = new FileSignature(
+  "6E 2B 31 00",
+  344,
+  "NlfTI",
+);
+
+export const FILE_SIGNATURE_NLFTI_HEADER = new FileSignature(
+  "6E 69 31 00",
+  344,
+  "NlfTI Header",
+);
+
+export const FILE_SIGNATURE_DIGITAL_METAPHORS_REPORT_BUILDER =
+  new FileSignature("52 41 46 36 34", 0, "Digital Metaphors Report Builder");
+
+export const FILE_SIGNATURE_VISONAIRE_3_ENGINE_RESOURCE = new FileSignature(
+  "56 49 53 33",
+  0,
+  "Visionaire 3 Engine Resource",
+);
+
+export const FILE_SIGNATURE_HEALTH_LEVEL_SEVEN_1 = new FileSignature(
+  "4D 53 48 7C",
+  0,
+  "Health Level Seven",
+);
+
+export const FILE_SIGNATURE_HEALTH_LEVEL_SEVEN_2 = new FileSignature(
+  "42 53 48 7C",
+  0,
+  "Health Level Seven",
+);
+
+export const FILE_SIGNATURE_SAP_POWER_MONITOR = new FileSignature(
+  "70 77 72 64 61 74 61",
+  0,
+  "SAP Power Monitor",
+);
+
+export const FILE_SIGNATURE_ARC = new FileSignature(
+  "1a 08",
+  0,
+  "ARC archive file",
+);
+
+
 
 // Not on wiki list
 
