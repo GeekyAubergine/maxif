@@ -1107,11 +1107,97 @@ export const FILE_SIGNATURE_OPENSSH_PUBLIC_KEY = new FileSignature(
   "OpenSSH Public Key",
 );
 
+export const FILE_SIGNATURE_DICOM_MEDICAL = new FileSignature(
+  "44 49 43 4D",
+  128,
+  "DICOM Medical File",
+);
+
+export const FILE_SIGNATURE_WOFF_1 = new FileSignature(
+  "77 4F 46 46",
+  0,
+  "WOFF 1",
+);
+
+export const FILE_SIGNATURE_WOFF_2 = new FileSignature(
+  "77 4F 46 32	",
+  0,
+  "WOFF 2",
+);
+
+export const FILE_SIGNTURE_XML_UTF8 = new FileSignature(
+  "3C 3F 78 6D 6C 20",
+  0,
+  "XML UTF-8",
+);
+
+export const FILE_SIGNATURE_XML_UTF16_LE = new FileSignature(
+  "3C 00 3F 00 78 00 6D 00 6C 00 20",
+  0,
+  "XML UTF-16 Little Endian",
+);
+
+export const FILE_SIGNATURE_XML_UTF16_BE = new FileSignature(
+  "00 3C 00 3F 00 78 00 6D 00 6C 00 20",
+  0,
+  "XML UTF-16 Big Endian",
+);
+
+export const FILE_SIGNATURE_XML_UTF32_LE = new FileSignature(
+  "3C 00 00 00 3F 00 00 00 78 00 00 00 6D 00 00 00 6C 00 00 00 20 00 00 00",
+  0,
+  "XML UTF-32 Little Endian",
+);
+
+export const FILE_SIGNATURE_XML_UTF32_BE = new FileSignature(
+  "00 00 00 3C 00 00 00 3F 00 00 00 78 00 00 00 6D 00 00 00 6C 00 00 00 20",
+  0,
+  "XML UTF-32 Big Endian",
+);
+
+export const FILE_SIGNATURE_XML_EBCDIC = new FileSignature(
+  "4C 6F A7 94 93 40",
+  0,
+  "XML EBCDIC",
+);
+
+export const FILE_SIGNATURE_WASM = new FileSignature(
+  "00 61 73 6D",
+  0,
+  "WebAssembly",
+);
+
+export const FILE_SIGNATURE_LEPTON_JPEG = new FileSignature(
+  "CF 84 01",
+  0,
+  "Lepton compressed JPEG",
+);
+
+export const FILE_SIGNATURE_ADOBE_FLASH_1 = new FileSignature(
+  "43 57 53",
+  0,
+  "Adobe Flash",
+);
+
+export const FILE_SIGNATURE_ADOBE_FLASH_2 = new FileSignature(
+  "46 57 53",
+  0,
+  "Adobe Flash",
+);
+
+export const FILE_SIGNATURE_LINUX_DEB = new FileSignature(
+  "21 3C 61 72 63 68 3E 0A",
+  0,
+  "Linux deb file",
+);
+
 export const FILE_SIGNATURE_WEBP = new FileSignature(
   "52 49 46 46 ?? ?? ?? ?? 57 45 42 50",
   0,
   "WebP",
 );
+
+// --- here
 
 export const FILE_SIGNATURE_MPEG_2_PART_1 = new FileSignature(
   "47",
