@@ -987,51 +987,125 @@ export const FILE_SIGNATURE_MAGIC_LANTERN_VIDEO = new FileSignature(
   "Magic Lantern Video",
 );
 
-export const FILE_SIGNATURE_WINDOWS_UPDATE_BINARY_DELTA_COMPRESSION = new FileSignature(
-  "44 43 4D 01 50 41 33 30 50 41 33 30",
-  0,
-  "Windows Update Binary Delta Compression",
-)
+export const FILE_SIGNATURE_WINDOWS_UPDATE_BINARY_DELTA_COMPRESSION =
+  new FileSignature(
+    "44 43 4D 01 50 41 33 30 50 41 33 30",
+    0,
+    "Windows Update Binary Delta Compression",
+  );
 
 export const FILE_SIGNATURE_7_ZIP = new FileSignature(
   "37 7A BC AF 27 1C",
   0,
   "7-Zip",
-)
+);
 
-export const FILE_SIGNATURE_GZIP = new FileSignature(
-  "1F 8B",
-  0,
-  "GZIP",
-)
+export const FILE_SIGNATURE_GZIP = new FileSignature("1F 8B", 0, "GZIP");
 
 export const FILE_SIGNATURE_XZ_COMPRESSION_UTILITY_LZMA2 = new FileSignature(
   "FD 37 7A 58 5A 00",
   0,
   "XZ compression utility (LZMA2)",
-)
+);
 
 export const FILE_SIGNATURE_LZ4_FRAME_FORMAT = new FileSignature(
   "04 22 4D 18",
   0,
   "LZ4 Frame Format",
-)
+);
 
 export const FILE_SIGNATURE_MS_CABINET = new FileSignature(
   "4D 53 43 46",
   0,
   "Microsoft Cabinet",
-)
+);
 
 export const FILE_SIGNATURE_MICROSOFT_COMPRESSED_QUANTUM = new FileSignature(
   "53 5A 44 44 88 F0 27 33",
   0,
   "Microsoft compressed file in Quantum format",
-)
+);
 
 export const FILE_SIGNATURE_FLIF = new FileSignature("46 4C 49 46", 0, "FLIF");
 
-// ---
+export const FILE_SIGNATURE_MATROSKA = new FileSignature(
+  "1A 45 DF A3",
+  0,
+  "Matroska (includes WebM)",
+);
+
+export const FILE_SIGNATURE_SEAN = new FileSignature(
+  "4D 49 4C 20",
+  0,
+  "SEAN: Session Analysis training file",
+);
+
+export const FILE_SIGNATURE_DJVU = new FileSignature(
+  "41 54 26 54 46 4F 52 4D ?? ?? ?? ?? 44 4A 56",
+  0,
+  "DjVu",
+);
+
+export const FILE_SIGNATURE_DER_X509_CERTIFICATE = new FileSignature(
+  "30 82",
+  0,
+  "DER X.509 Certificate",
+);
+
+export const FILE_SIGANTURE_PEM_X509_CERTIFICATE = new FileSignature(
+  "2D 2D 2D 2D 2D 42 45 47 49 4E 20 43 45 52 54 49 46 49 43 41 54 45 2D 2D 2D 2D 2D",
+  0,
+  "PEM X.509 Certificate",
+);
+
+export const FILE_SIGNATURE_PEM_X509_CERTIFICATE_SIGNING_REQUEST =
+  new FileSignature(
+    "2D 2D 2D 2D 2D 42 45 47 49 4E 20 43 45 52 54 49 46 49 43 41 54 45 20 52 45 51 55 45 53 54 2D 2D 2D 2D 2D",
+    0,
+    "PEM X.509 Certificate Signing Request",
+  );
+
+export const FILE_SIGNATURE_PEM_X509_PKCS8_PRIVATE_KEY = new FileSignature(
+  "2D 2D 2D 2D 2D 42 45 47 49 4E 20 50 52 49 56 41 54 45 20 4B 45 59 2D 2D 2D 2D 2D",
+  0,
+  "PEM X.509 PKCS#8 Private Key",
+);
+
+export const FILE_SIGNATURE_PEM_X509_PKCS1_DSA_PRIVATE_KEY = new FileSignature(
+  "2D 2D 2D 2D 2D 42 45 47 49 4E 20 44 53 41 20 50 52 49 56 41 54 45 20 4B 45 59 2D 2D 2D 2D 2D",
+  0,
+  "PEM X.509 PKCS#1 DSA Private Key",
+);
+
+export const FILE_SIGNATURE_PEM_X509_PKCS1_RSA_PRIVATE_KEY = new FileSignature(
+  "2D 2D 2D 2D 2D 42 45 47 49 4E 20 52 45 41 20 50 52 49 56 41 54 45 20 4B 45 59 2D 2D 2D 2D 2D",
+  0,
+  "PEM X.509 PKCS#1 RSA Private Key",
+);
+
+export const FILE_SIGNATURE_PUTTY_PRIVATE_KEY_V2 = new FileSignature(
+  "50 75 54 54 59 2D 55 73 65 72 2D 4B 65 79 2D 46 69 6C 65 2D 32 3A",
+  0,
+  "PuTTY Private Key v2",
+);
+
+export const FILE_SIGNATURE_PUTTY_PRIVATE_KEY_V3 = new FileSignature(
+  "50 75 54 54 59 2D 55 73 65 72 2D 4B 65 79 2D 46 69 6C 65 2D 33 3A",
+  0,
+  "PuTTY Private Key v3",
+);
+
+export const FILE_SIGNATURE_OPENSSH_PRIVATE_KEY = new FileSignature(
+  "2D 2D 2D 2D 2D 42 45 47 49 4E 20 4F 50 45 4E 53 53 48 20 50 52 49 56 41 54 45 20 4B 45 59 2D 2D 2D 2D 2D",
+  0,
+  "OpenSSH Private Key",
+);
+
+export const FILE_SIGNATURE_OPENSSH_PUBLIC_KEY = new FileSignature(
+  "2D 2D 2D 2D 2D 42 45 47 49 4E 20 53 53 48 32 20 4B 45 59 2D 2D 2D 2D 2D",
+  0,
+  "OpenSSH Public Key",
+);
 
 export const FILE_SIGNATURE_WEBP = new FileSignature(
   "52 49 46 46 ?? ?? ?? ?? 57 45 42 50",

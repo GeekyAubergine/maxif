@@ -1,4 +1,5 @@
 import { DataViewWithCursor } from "../files/FileDataReader";
+import { ParserDjVu } from "./ParserDjVu";
 import { ParserOAR } from "./ParserOAR";
 import { ParserWebP } from "./ParserWebP";
 
@@ -30,5 +31,6 @@ export interface Parser {
 
 export const PARSERS: Record<string, Parser> = {};
 
+new ParserDjVu().register();
 new ParserOAR().register();
 new ParserWebP().register();
