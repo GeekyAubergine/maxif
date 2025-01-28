@@ -1285,25 +1285,25 @@ export const FILE_SIGNATURE_LZFSE = new FileSignature(
   "62 76 78 32",
   0,
   "LZFSE style data compression using Finite State Entropy",
-)
+);
 
 export const FILE_SIGNATURE_APACHE_OPTIMIZED_ROW_COLUMNAR = new FileSignature(
   "4F 52 43",
   0,
   "Apache Optimized Row Columnar (ORC)",
-)
+);
 
 export const FILE_SIGNATURE_APACHE_ARVO = new FileSignature(
   "4F 62 6A 01",
   0,
   "Apache Avro binary file",
-)
+);
 
 export const FILE_SIGNATURE_RCFILE_COLUMNAR = new FileSignature(
   "53 45 51 36",
   0,
   "RCFile columnar file",
-)
+);
 
 export const FILE_SIGNATURE_ROBLOX_PLACE = new FileSignature(
   "3C 72 6F 62 6C 6F 78 21",
@@ -1315,116 +1315,261 @@ export const FILE_SIGNATURE_PHOTOCAP_OBJECT_TEMPLATE = new FileSignature(
   "65 87 78 56",
   0,
   "PhotoCap Object Template",
-)
+);
 
 export const FILE_SIGANTURE_PHOTOCAP_VECTOR = new FileSignature(
   "55 55 AA AA",
   0,
   "PhotoCap Vector",
-)
+);
 
 export const FILE_SIGNATURE_PHOTOCAP_TEMPLATE = new FileSignature(
   "78 56 34",
   0,
   "PhotoCap Template",
-)
+);
 
 export const FILE_SIGNATURE_APACHE_PRAQUET_COLUMNAR = new FileSignature(
   "50 41 52 31",
   0,
   "Apache Parquet columnar file",
-)
+);
 
 export const FILE_SIGNATURE_EMULATOR_EMAXSYNTH_SAMPLES = new FileSignature(
   "45 4D 58 32",
   0,
   "Emulator Emaxsynth Samples",
-)
+);
 
 export const FILE_SIGNATURE_LUA_BYTECODE = new FileSignature(
   "45 4D 55 33",
   0,
   "Lua bytecode",
-)
+);
 
 export const FILE_SIGNATURE_FILE_ALIAS = new FileSignature(
   "62 6F 6F 6B 00 00 00 00 6D 61 72 6B 00 00 00 00",
   0,
   "File Alias",
-)
+);
 
 export const FILE_SIGNATURE_MICROSOFT_ZOME_IDENTIFIER = new FileSignature(
   "5B 5A 6F 6E 65 54 72 61 6E 73 66 65 72 5D",
   0,
   "Microsoft Zone Identifier for URL Security Zones",
-)
+);
 
 export const FILE_SIGNATURE_EMAIL_MESSAGE_VAR5 = new FileSignature(
   "52 65 63 65 69 76 65 64 3A",
   0,
   "Email Message var5",
-)
+);
 
 export const FILE_SIGNATURE_TABLEAU_DATASTORE = new FileSignature(
   "20 02 01 62 A0 1E AB 07 02 00 00 00",
   0,
   "Tableau Datastore",
-)
+);
 
 export const FILE_SIGNATURE_KDB = new FileSignature(
   "37 48 03 02 00 00 00 00 58 35 30 39 4B 45 59",
   0,
   "KDB",
-)
+);
 
-export const FILE_SIGANTURE_PGP = new FileSignature(
-  "85 ?? ?? 03",
-  0,
-  "PGP",
-)
+export const FILE_SIGANTURE_PGP = new FileSignature("85 ?? ?? 03", 0, "PGP");
 
 export const FILE_SIGNATURE_ZSTANDARD_COMPRESS = new FileSignature(
   "28 B5 2F FD",
   0,
   "Zstandard Compress",
-)
+);
 
 export const FILE_SIGNATURE_QUICK_ZIP_RS_COMPRESSED = new FileSignature(
   "52 53 56 4B 44 41 54 41",
   0,
   "QuickZip rs compressed archive",
-)
+);
 
-export const FILE_SIGNATURE_SMILE = new FileSignature(
-  "3A 29 0A",
-  0,
-  "Smile",
-)
+export const FILE_SIGNATURE_SMILE = new FileSignature("3A 29 0A", 0, "Smile");
 
 export const FILE_SIGNATURE_PREFERRED_EXECUTABLE_FORMAT = new FileSignature(
   "4A 6F 79 21",
   0,
   "Preferred Executable Format",
-)
+);
 
 export const FILE_SIGNATURE_VPK_FILE = new FileSignature(
   "34 12 AA 55",
   0,
   "VPK file",
   "Used by Source Engine",
-)
+);
 
 export const FILE_SIGNATURE_ACE_COMPRESSED = new FileSignature(
   "2A 2A 41 43 45 2A 2A",
   7,
   "ACE compressed file",
-)
+);
 
-export const FILE_SIGNATURE_ARJ = new FileSignature(
-  "60 EA",
+export const FILE_SIGNATURE_ARJ = new FileSignature("60 EA", 0, "ARJ");
+
+export const FILE_SIGNATURE_INSTALL_SHIELD_CAB = new FileSignature(
+  "49 53 63 28",
   0,
-  "ARJ",
-)
+  "InstallShield CAB Archive File",
+);
+
+export const FILE_SIGNATURE_WINDOWS_3_1_COMPRESSED_FILE = new FileSignature(
+  "4B 57 41 4A",
+  0,
+  "Windows 3.1x Compressed File",
+);
+
+export const FILE_SIGNATURE_WINDOWS_9_COMPRESSED_FILE = new FileSignature(
+  "53 5A 44 44",
+  0,
+  "Windows 9x Compressed File",
+);
+
+export const FILE_SIGNATURE_ZOO_FILE = new FileSignature(
+  "5A 4F 4F",
+  0,
+  "Zoo File",
+);
+
+export const FILE_SIGNATURE_PORTABLE_BITMAP_ASCII = new FileSignature(
+  "50 31 0A",
+  0,
+  "Portable Bitmap ASCII",
+);
+
+export const FILE_SIGNATURE_PORTABLE_BITMAP_BINARY = new FileSignature(
+  "50 34 0A",
+  0,
+  "Portable Bitmap Binary",
+);
+
+export const FILE_SIGNATURE_PORTABLE_GRAYMAP_ASCII = new FileSignature(
+  "50 32 0A",
+  0,
+  "Portable Graymap ASCII",
+);
+
+export const FILE_SIGNATURE_PORTABLE_GRAYMAP_BINARY = new FileSignature(
+  "50 35 0A",
+  0,
+  "Portable Graymap Binary",
+);
+
+export const FILE_SIGNATURE_PORTABLE_PIXMAP_ASCII = new FileSignature(
+  "50 33 0A",
+  0,
+  "Portable Pixmap ASCII",
+);
+
+export const FILE_SIGNATURE_PORTABLE_PIXMAP_BINARY = new FileSignature(
+  "50 36 0A",
+  0,
+  "Portable Pixmap Binary",
+);
+
+export const FILE_SIGNATURE_WINDOWS_METAFILE = new FileSignature(
+  "D7 CD C6 9A",
+  0,
+  "Windows Metafile",
+);
+
+export const FILE_SIGNATURE_XCF = new FileSignature(
+  "67 69 6D 70 20 78 63 66",
+  0,
+  "XCF",
+);
+
+export const FILE_SIGNATURE_X_PIXMAP = new FileSignature(
+  "2F 2A 20 58 50 4D 20 2A 2F",
+  0,
+  "X PixMap",
+);
+
+export const FILE_SIGNATURE_ADVANCED_FORENSICS_FORMAT = new FileSignature(
+  "41 46 46",
+  0,
+  "Advanced Forensics Format",
+);
+
+export const FILE_SIGNATURE_ENCASE_EWF_V2 = new FileSignature(
+  "45 56 46 32",
+  0,
+  "EnCase EWF v2",
+);
+
+export const FILE_SIGNATURE_ENCASE_EWF_V1 = new FileSignature(
+  "45 56 46",
+  0,
+  "EnCase EWF v1",
+);
+
+export const FILE_SIGNATURE_QCOW = new FileSignature("51 46 49", 0, "QCOW");
+
+export const FILE_SIGNATURE_ANIMATED_CURSOR = new FileSignature(
+  "52 49 46 46 ?? ?? ?? ?? 41 43 4F 4E",
+  0,
+  "Animated Cursor",
+);
+
+export const FILE_SIGNATURE_CDA = new FileSignature(
+  "52 49 46 46 ?? ?? ?? ?? 43 44 44 41",
+  0,
+  ".cda file",
+);
+
+export const FILE_SIGNATURE_QUALCOMM_PURE_VOICE = new FileSignature(
+  "52 49 46 46 ?? ?? ?? ?? 51 4C 43 4D",
+  0,
+  "Qualcomm PureVoice",
+);
+
+export const FILE_SIGNATURE_ADOBE_SHOCHWAVE = new FileSignature(
+  "52 49 46 58 ?? ?? ?? ?? 46 47 44 4D",
+  0,
+  "Adobe Shockwave",
+);
+
+export const FILE_SIGNATURE_MACROMEDIA_DIRECTOR = new FileSignature(
+  "52 49 46 58 ?? ?? ?? ?? 4D 56 39 33",
+  0,
+  "Macromedia Director",
+);
+
+export const FILE_SIGNATURE_FLASH_VIDEO = new FileSignature(
+  "46 4C 56",
+  0,
+  "Flash Video",
+);
+
+export const FILE_SIGNATURE_VIRTUAL_BOX_VIRTUAL_HARD_DISK_FILE_FORMAT =
+  new FileSignature(
+    "3C 3C 3C 20 4F 72 61 63 6C 65 20 56 4D 20 56 69 72 74 75 61 6C 42 6F 78 20 44 69 73 6B 20 49 6D 61 67 65 20 3E 3E 3E",
+    0,
+    "VirtualBox Virtual Hard Disk File Format",
+  );
+
+export const FILE_SIGNATURE_WINDOWS_VIRTUAL_PC_VIRTUAL_HARD_DISK =
+  new FileSignature(
+    "63 6F 6E 65 63 74 69 78",
+    0,
+    "Windows Virtual PC Virtual Hard Disk",
+  );
+
+export const FILE_SIGNATURE_WINDOWS_VIRTUAL_PC_WINDOWS_8_VIRTUAL_HARD_DISK =
+  new FileSignature(
+    "76 68 64 78 66 69 6C 65",
+    0,
+    "Windows Virtual PC Windows 8 Virtual Hard Disk",
+  );
+
+
 
 export const FILE_SIGNATURE_JPEG_XL_1 = new FileSignature(
   "00 00 00 0C 4A 58 4C 20 0D 0A 87 0A",
