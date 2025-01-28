@@ -1569,7 +1569,79 @@ export const FILE_SIGNATURE_WINDOWS_VIRTUAL_PC_WINDOWS_8_VIRTUAL_HARD_DISK =
     "Windows Virtual PC Windows 8 Virtual Hard Disk",
   );
 
+export const FILE_SIGNATURE_COMPRESSED_ISO_IMAGE = new FileSignature(
+  "49 73 5A 21",
+  0,
+  "Compressed ISO Image",
+);
 
+export const FILE_SIGNATURE_DIRECT_ACCESS_ARCHIVE_POWERISO = new FileSignature(
+  "44 41 41",
+  0,
+  "Direct Access Archive (PowerISO)",
+);
+
+export const FILE_SIGNATURE_WINDOWS_EVENT_VIEWER = new FileSignature(
+  "4C 66 4C 65",
+  0,
+  "Windows Event Viewer file",
+);
+
+export const FILE_SIGNATURE_WINDOWS_EVENT_VIEWER_XML = new FileSignature(
+  "45 6C 66 46 69 6C 65",
+  0,
+  "Windows Event Viewer XML file",
+);
+
+export const FILE_SIGNATURE_WINDOWS_CUSTOMIZED_DATABASE = new FileSignature(
+  "73 64 62 66",
+  8,
+  "Windows Customized Database",
+);
+
+export const FILE_SIGNATURE_WINDOWS_3_PROGRAM_MANAGER_GROUP = new FileSignature(
+  "50 4D 43 43",
+  0,
+  "Windows 3 Program Manager Program Group file format",
+);
+
+export const FILE_SIGNATURE_ICC_PROFILE = new FileSignature(
+  "4B 43 4D 53",
+  0,
+  "ICC profile",
+);
+
+export const FILE_SIGNATURE_WINDOWS_REGISTRY = new FileSignature(
+  "72 65 67 66",
+  0,
+  "Windows Registry file",
+);
+
+export const FILE_SIGNATURE_MICROSOFT_OUTLOOK_PERSONAL_STORAGE_TABLE =
+  new FileSignature(
+    "21 42 44 4E",
+    0,
+    "Microsoft Outlook Personal Storage Table",
+  );
+
+export const FILE_SIGNATURE_DRACO = new FileSignature(
+  "44 52 41 43 4F",
+  0,
+  "3D model compressed with Google Draco",
+);
+
+export const FILE_SIGNATURE_GRIB = new FileSignature(
+  "47 52 49 42",
+  0,
+  "GRIB",
+  "WMO GRIB or GRIB2 file",
+);
+
+export const FILE_SIGNATURE_BLENDER = new FileSignature(
+  "42 4C 45 4E 44 45 52",
+  0,
+  "Blender",
+);
 
 export const FILE_SIGNATURE_JPEG_XL_1 = new FileSignature(
   "00 00 00 0C 4A 58 4C 20 0D 0A 87 0A",
@@ -1582,6 +1654,108 @@ export const FILE_SIGNATURE_JPEG_XL_2 = new FileSignature(
   0,
   "JPEG XL",
 );
+
+export const FILE_SIGNATURE_TRUE_TYPE_FONT = new FileSignature(
+  "00 01 00 00 00",
+  0,
+  "TrueType Font",
+);
+
+export const FILE_SIGNATURE_OPENTYPE_FONT = new FileSignature(
+  "4F 54 54 4F",
+  0,
+  "OpenType Font",
+);
+
+export const FILE_SIGNATURE_MODULEFILE = new FileSignature(
+  "23 25 4D 6F 64 75 6C 65",
+  0,
+  "Modulefile",
+);
+
+export const FILE_SIGNATURE_WINDOWS_IMAGING_FORMAT = new FileSignature(
+  "4D 53 57 49 4D 00 00 00 D0 00 00 00 00",
+  0,
+  "Windows Imaging Format",
+);
+
+export const FILE_SIGNATURE_SLOB = new FileSignature(
+  "21 2D 31 53 4C 4F 42 1F",
+  0,
+  "SLOB",
+);
+
+export const FILE_SIGNATURE_SERIALIZED_JAVA_DATA = new FileSignature(
+  "AC ED",
+  0,
+  "Serialized Java Data",
+);
+
+export const FILE_SIGNATURE_CREATIVE_VOICE_FILE = new FileSignature(
+  "43 72 65 61 74 69 76 65 20 56 6F 69 63 65 20 46 69 6C 65 1A 1A 00",
+  0,
+  "Creative Voice File",
+);
+
+export const FILE_SIGNATURE_AU_AUDIO_FILE = new FileSignature(
+  "2E 73 6E 64",
+  0,
+  "AU Audio File",
+)
+
+export const FILE_SIGNATURE_OPENGL_IRIS_PERFORMER = new FileSignature(
+  "DB 0A CE 00",
+  0,
+  "OpenGL Iris Performer",
+)
+
+export const FILE_SIGNATURE_NOODLESOFT_HAZEL = new FileSignature(
+  "48 5a 4c 52 00 00 00 18",
+  0,
+  "Noodlesoft Hazel",
+)
+
+export const FILE_SIGNATURE_FL_STUDIO_PROJECT = new FileSignature(
+  '46 4C 68 64',
+  0,
+  "FL Studio Project",
+)
+
+export const FILE_SIGNATURE_FL_STUDIO_PROJECT_MOBILE = new FileSignature(
+  "31 30 4C 46",
+  0,
+  "FL Studio Project Mobile",
+)
+
+export const FILE_SIGNATURE_VORMETRIC_ENCRYPTION_DPM_V2_1_HEADER = new FileSignature(
+  "52 4b 4d 43 32 31 30",
+  0,
+  "Vormetric Encryption DPM v2.1 Header",
+)
+
+export const FILE_SIGNATURE_MICROSOFT_MONEY_FILE = new FileSignature(
+  "00 01 00 00 4D 53 49 53 41 4D 20 44 61 74 61 62 61 73 65",
+  0,
+  "Microsoft Money File",
+)
+
+export const FILE_SIGNATURE_MICROSOFT_ACCESS_2007_DATABASE = new FileSignature(
+  "00 01 00 00 53 74 61 6E 64 61 72 64 20 41 43 45 20 44 42",
+  0,
+  "Microsoft Access 2007 Database",
+)
+
+export const FILE_SIGNATURE_MICROSOFT_ACCESS_DATABASE = new FileSignature(
+  "00 01 00 00 53 74 61 6E 64 61 72 64 20 4A 65 74 20 44 42",
+  0,
+  "Microsoft Access Database",
+)
+
+export const FILE_SIGNATURE_MICROGRAFX_VECTOR_GRAPHIC = new FileSignature(
+  "01 FF 02 04 03 02",
+  0,
+  "Micrografx Vector Graphic",
+)
 
 export const FILE_SIGNATURE_DSS_V2 = new FileSignature(
   "02 64 73 73",
