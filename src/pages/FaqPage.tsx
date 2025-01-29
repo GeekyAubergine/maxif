@@ -24,7 +24,7 @@ export default function FaqPage() {
         <h3 id="who-made-this-">Who made this?</h3>
         <p>MAXIF was created by <a href="https://zoeaubert.me" rel="noopener noreferrer">Zoe Aubert</a>.</p>
         <h3 id="why-maxif-">Why MAXIF?</h3>
-        <p>My friend <a href="https://dreamsvoid.com/" rel="noopener noreferrer">Doug</a> suggested the name. It stands for Magic number And eXif Information Finder.</p>
+        <p>My friend <a href="https://nexer.net/" rel="noopener noreferrer">Doug</a> suggested the name. It stands for Magic number And eXif Information Finder.</p>
         <h3 id="can-i-verify-this-">Can I verify this?</h3>
         <p>Yes, MAXIF is open source and available on <a href="https://github.com/geekyaubergine/maxif" rel="noopener noreferrer">GitHub</a>.</p>
       </div>
