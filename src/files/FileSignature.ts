@@ -441,13 +441,13 @@ export const FILE_SIGNATURE_JEPG_UNKOWN = new FileSignature(
 export const FILE_SIGNATURE_JEPG_JFIF = new FileSignature(
   "FF D8 FF E0 00 10 4A 46 49 46 00 01",
   0,
-  "JPEG. JFIF",
+  "JPEG-JFIF",
 );
 
 export const FILE_SIGNATURE_JEPG_EXIF = new FileSignature(
   "FF D8 FF E1 ?? ?? 45 78 69 66 00 00",
   0,
-  "JPEG. Exif",
+  "JPEG-Exif",
 );
 
 export const FILE_SIGNATURE_JPEG_2000_1 = new FileSignature(
