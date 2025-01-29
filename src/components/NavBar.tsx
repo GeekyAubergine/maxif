@@ -1,16 +1,16 @@
 export default function NavBar() {
   return (
-    <div className="nav-bar-wrapper">
+    <div className="nav-wrapper">
       <nav>
         <div>
-          <a href="/">
-            <p className="text-2xl font-bold">MAXIF</p>
-          </a>
+          <p className="text-xl font-bold">
+            <a href="/">MAXIF</a>
+          </p>
         </div>
         <div className="link-list">
-          <a href="/faq">
-            <p>FAQ</p>
-          </a>
+          <p>
+            <a href="/faq">FAQ</a>
+          </p>
         </div>
       </nav>
     </div>

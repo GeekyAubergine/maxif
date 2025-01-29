@@ -140,18 +140,18 @@
     /* ----------------  Components ---------------- */
 
     main {
-        @apply flex flex-col items-center;
+        @apply min-h-[100vh] flex flex-col items-center;
 
         h1 {
             @apply text-center mt-12;
         }
     }
 
-    .nav-bar-wrapper {
-        @apply w-full px-4 py-4 bg-accent;
+    .nav-wrapper {
+        @apply w-full px-4 py-2 bg-accent;
 
         nav {
-            @apply width-controlled px-4 flex-row justify-between items-baseline;
+            @apply width-controlled px-4 flex-row justify-between items-center;
 
             a {
                 @apply no-underline hover:under;
@@ -171,13 +171,27 @@
         }
     }
 
+    .footer-wrapper {
+        @apply w-full px-4 py-2 mt-12 bg-accent;
+
+        footer {
+            @apply width-controlled px-4 flex-row justify-between items-center;
+        }
+    }
+
     .data-container {
         @apply flex-col md:flex-row md:justify-between md:items-start pt-0 pb-4;
+
+        h3 {
+            @apply font-normal;
+        }
     }
 
     .file-upload {
+        @apply pr-2;
+
         .input-wrapper {
-            @apply flex flex-col items-center justify-center w-[8rem] h-[12rem] bg-accent border-2 border-dashed border-border rounded;
+            @apply flex flex-col items-center justify-center w-[8rem] h-[12rem] bg-codeBackground border-2 border-dashed border-border rounded;
 
             p {
                 @apply text-center;
@@ -190,14 +204,14 @@
     }
 
     .file-data-display {
-        @apply w-full my-8 md:my-0 md:mx-6;
+        @apply w-full my-8 md:my-0 md:mx-8;
     }
 
     .hex-display {
-        @apply min-w-[12rem];
+        @apply w-[10rem];
 
         .bytes {
-            @apply grid grid-cols-4 gap-1 max-w-[11rem];
+            @apply grid grid-cols-4 gap-1 w-[10rem];
 
             .byte {
                 @apply p-1 my-0 uppercase text-center bg-codeBackground rounded-lg;
@@ -213,7 +227,7 @@
     }
 
     .label-data-pair {
-        @apply mb-4;
+        @apply mb-2;
 
         .label {
             @apply secondary text-sm;
@@ -226,9 +240,10 @@
     }
 
     .text-blob {
-        @apply w-full mt-12;
+        @apply w-full;
 
-        h3, h4 {
+        h3,
+        h4 {
             @apply mt-8 font-bold;
         }
 
