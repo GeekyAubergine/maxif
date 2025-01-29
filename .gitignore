@@ -130,7 +130,6 @@ dist
 .pnp.*
 
 # vite
-public
 dist
 
 .DS_Store
