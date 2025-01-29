@@ -13,7 +13,7 @@ export default function FaqPage() {
         <p>This project resulted from years of having customers upload files to the various services I&#39;ve worked on that claim to be JPEG or PNG files that don&#39;t work. After inspection, the files almost always turned out to be in a different format and had been renamed. I built this rather than having to read the bytes by hand and compare them to file signatures.</p>
         <p>MAXIF is for anyone who has experienced problems like this or wants to verify the type of file they have been given.</p>
         <h3 id="how-does-it-work-">How does it work?</h3>
-        <p>MAXIF identifies files by checking the <a href="https://en.wikipedia.org/wiki/File_format#Magic_number">File Signature</a> and reading the file&#39;s metadata.</p>
+        <p>MAXIF identifies files by checking the <a href="https://en.wikipedia.org/wiki/File_format#Magic_number" rel="noopener noreferrer">File Signature</a> and reading the file&#39;s metadata.</p>
         <h4 id="file-signature">File Signature</h4>
         <p>Almost all files have data within their structure that can be used to identify them.</p>
         <p>Reading this data is often more than enough to identify a file.</p>
@@ -22,11 +22,11 @@ export default function FaqPage() {
         <p>Sometimes, the file signature is not enough, so MAXIF attempts to read the data inside the file to glean more information about it.</p>
         <p>In addition, reading this data allows MAXIF to display additional details about the file in one place.</p>
         <h3 id="who-made-this-">Who made this?</h3>
-        <p>MAXIF was created by <a href="https://zoeaubert.me">Zoe Aubert</a>.</p>
+        <p>MAXIF was created by <a href="https://zoeaubert.me" rel="noopener noreferrer">Zoe Aubert</a>.</p>
         <h3 id="why-maxif-">Why MAXIF?</h3>
-        <p>My friend <a href="https://dreamsvoid.com/">Doug</a> suggested the name. I believe it is a mix of MAgic number and eXIF.</p>
+        <p>My friend <a href="https://dreamsvoid.com/" rel="noopener noreferrer">Doug</a> suggested the name. It stands for Magic number And eXif Information Finder.</p>
         <h3 id="can-i-verify-this-">Can I verify this?</h3>
-        <p>Yes, MAXIF is open source and available on <a href="https://github.com/geekyaubergine/maxif">GitHub</a>.</p>
+        <p>Yes, MAXIF is open source and available on <a href="https://github.com/geekyaubergine/maxif" rel="noopener noreferrer">GitHub</a>.</p>
       </div>
     </Page>
   );
