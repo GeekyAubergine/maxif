@@ -2022,8 +2022,3 @@ export const FILE_SIGNATURE_COMMODORE_64_BINARY = new FileSignature(
   0,
   "Commodore 64 Binary",
 );
-
-// Not on wiki list
-
-//heif
-// HEVC
