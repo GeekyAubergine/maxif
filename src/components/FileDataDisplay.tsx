@@ -52,30 +52,28 @@ export default function FileDataDisplay({
   return (
     <div className={cx("file-data-display", className)}>
       <h3>File Data</h3>
-      <div className="file-data-elements">
-        {file != null && (
-          <>
-            <DataAndLabel label="File Name" value={file?.name} />
-          </>
+      <DataAndLabel label="File Name" value={file?.name ?? "-"} />
+      <DataAndLabel
+        label="File Type"
+        value={fileSignatureMatchResult ? fileSignatureMatchResult.name : "-"}
+      />
+      <DataAndLabel
+        label="File Signature"
+        value={
+          fileSignatureMatchResult
+            ? fileSignatureMatchResult.signatureAsString
+            : "-"
+        }
+      />
+      <DataAndLabel
+        label="File Signature Offset"
+        value={String(
+          fileSignatureMatchResult
+            ? fileSignatureMatchResult.signatureOffset
+            : "-",
         )}
-        {fileSignatureMatchResult !== false && (
-          <>
-            <DataAndLabel
-              label="File Type"
-              value={fileSignatureMatchResult.name}
-            />
-            <DataAndLabel
-              label="File Signature"
-              value={fileSignatureMatchResult.signatureAsString}
-            />
-            <DataAndLabel
-              label="File Signature Offset"
-              value={String(fileSignatureMatchResult.signatureOffset)}
-            />
-          </>
-        )}
-        {metadataElements.map(renderMetadataElement)}
-      </div>
+      />
+      {metadataElements.map(renderMetadataElement)}
     </div>
   );
 }

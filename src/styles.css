@@ -37,22 +37,18 @@
         @apply text-text tabular-nums break-words leading-[1.5rem];
     }
 
-    .accent {
-        @apply text-accent decoration-accent;
-    }
-
     .no-accent {
         @apply text-text decoration-text;
     }
 
     .under {
-        @apply underline hover:!underline;
+        @apply underline decoration-text;
         text-underline-offset: 0.15em;
         text-decoration-thickness: 1px;
     }
 
     .link {
-        @apply under text-accent decoration-accent;
+        @apply under;
     }
 
     .secondary {
@@ -64,7 +60,7 @@
     }
 
     .width-controlled {
-        @apply w-full mx-auto md:w-[48rem];
+        @apply w-full mx-auto md:w-[64ch];
     }
 
     main {
@@ -103,11 +99,11 @@
     h4,
     h5,
     h6 {
-        @apply my-2;
+        @apply my-2 font-bold;
     }
 
     h1 {
-        @apply text-4xl sm:text-5xl;
+        @apply text-4xl;
     }
 
     h2 {
@@ -125,7 +121,7 @@
     }
 
     a {
-        @apply accent under;
+        @apply under;
     }
 
     ol {
@@ -145,23 +141,38 @@
 
     main {
         @apply flex flex-col items-center;
+
+        h1 {
+            @apply text-center mt-12;
+        }
     }
 
-    .intro {
-        @apply width-controlled items-center my-12;
+    .nav-bar-wrapper {
+        @apply w-full px-4 py-4 bg-accent;
 
-        h1,
-        p {
-            @apply text-center my-1;
-        }
+        nav {
+            @apply width-controlled px-4 flex-row justify-between items-baseline;
 
-        p {
-            @apply max-w-[20rem] mt-2;
+            a {
+                @apply no-underline hover:under;
+            }
+
+            p {
+                /* @apply text-4xl; */
+            }
+
+            .link-list {
+                @apply flex-row justify-end;
+
+                * {
+                    @apply ml-4;
+                }
+            }
         }
     }
 
     .data-container {
-        @apply width-controlled px-4 flex-col md:flex-row md:justify-between md:items-start pt-0 pb-4;
+        @apply flex-col md:flex-row md:justify-between md:items-start pt-0 pb-4;
     }
 
     .file-upload {
@@ -179,7 +190,7 @@
     }
 
     .file-data-display {
-        @apply w-full my-8 md:my-0 md:mx-8;
+        @apply w-full my-8 md:my-0 md:mx-6;
     }
 
     .hex-display {
@@ -210,6 +221,19 @@
 
         .data {
             @apply text-text ml-4;
+            word-wrap: break-word;
+        }
+    }
+
+    .text-blob {
+        @apply w-full mt-12;
+
+        h3, h4 {
+            @apply mt-8 font-bold;
+        }
+
+        p {
+            @apply my-1 leading-6;
         }
     }
 }
