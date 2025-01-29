@@ -8,7 +8,7 @@ export default function Footer() {
             <a
               href="https://zoeaubert.me"
               className="under"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer me"
             >
               Zoe Aubert
             </a>
