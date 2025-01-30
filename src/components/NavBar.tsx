@@ -4,7 +4,7 @@ export default function NavBar() {
       <nav>
         <div>
           <p className="text-xl font-bold">
-            <a href="/">MAXIF</a>
+            <a href="/">M</a>
           </p>
         </div>
         <div className="link-list">
