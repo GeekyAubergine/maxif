@@ -205,6 +205,10 @@
 
     .file-data-display {
         @apply w-full my-8 md:my-0 md:mx-8;
+
+        .data {
+            @apply md:max-w-[12rem];
+        }
     }
 
     .hex-display {
@@ -236,6 +240,7 @@
         .data {
             @apply text-text ml-4;
             word-wrap: break-word;
+            text-overflow: clip
         }
     }
 

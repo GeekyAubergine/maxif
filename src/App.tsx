@@ -83,6 +83,13 @@ function App() {
           setFileSignatureMatchResult,
           setParsingResult,
         );
+
+        try {
+          // @ts-expect-error - Fathom is a global variable
+          fathom.trackEvent("file.processed");
+        } catch (_e) {
+          // Do nothing
+        }
       };
 
       fileReader.readAsArrayBuffer(file);
