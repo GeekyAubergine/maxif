@@ -37,6 +37,7 @@ function onFileLoad(
   const fileSignatureResult = FileSignature.findSignature(fileReader.result);
 
   setFileSignatureResult(fileSignatureResult);
+  setParsingResult(null);
 
   try {
     // @ts-expect-error - Fathom is a global variable
