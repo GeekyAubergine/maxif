@@ -36,11 +36,14 @@ function onFileLoad(
 
   const fileSignatureResult = FileSignature.findSignature(fileReader.result);
 
-  const fileDataReader = new DataViewWithCursor(
-    new DataView(fileReader.result),
-  );
-
   setFileSignatureResult(fileSignatureResult);
+
+  try {
+    // @ts-expect-error - Fathom is a global variable
+    fathom.trackEvent("file.processed");
+  } catch (_e) {
+    // Do nothing
+  }
 
   if (fileSignatureResult === false) {
     return;
@@ -48,12 +51,13 @@ function onFileLoad(
 
   const parser: Parser | null = PARSERS[fileSignatureResult.name];
 
-  console.log(parser);
-
   if (parser) {
+    const fileDataReader = new DataViewWithCursor(
+      new DataView(fileReader.result),
+    );
+
     const parseResult = parser.parse(fileDataReader);
     setParsingResult(parseResult);
-    console.log(parseResult);
   }
 }
 
@@ -72,7 +76,6 @@ function FileInspectionPage() {
   );
 
   const onDrop = useCallback((files: File[]) => {
-    console.log(files);
     if (files.length > 0) {
       const file = files[0];
 

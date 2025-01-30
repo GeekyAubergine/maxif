@@ -12,8 +12,6 @@ export class ParserOAR implements Parser {
 
     const formatVersion = data.consumeUint8();
 
-    console.log(formatVersion);
-
     return {
       metadata: {
         "Format version": String(formatVersion),

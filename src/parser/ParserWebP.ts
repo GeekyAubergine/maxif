@@ -15,8 +15,6 @@ export class ParserWebP implements Parser {
 
     const fileSize = data.consumeUint32(true) + 12;
 
-    console.log(fileSize);
-
     return {
       metadata: {
         "File Size": bytesSizeToHumanReadable(fileSize),

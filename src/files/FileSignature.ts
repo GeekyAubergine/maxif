@@ -36,8 +36,6 @@ export class FileSignature {
       const match = signature.matches(buffer);
 
       if (match) {
-        console.log({ match, bestMatch });
-
         if (
           bestMatch === false ||
           bestMatch.relevantBytes.length < match.relevantBytes.length

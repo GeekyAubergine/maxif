@@ -32,8 +32,6 @@ export default function HexDisplay({
   const bufferElements = useMemo(() => {
     const out = [];
 
-    console.log(fileSignatureMatchResult);
-
     for (let i = 0; i < BUFFER_LENGTH_TO_SHOW; i++) {
       const selected =
         fileSignatureMatchResult !== false
