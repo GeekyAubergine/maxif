@@ -19,6 +19,8 @@ export type FileSignatureMatchResult = FileSignatureMatch | false;
 export class FileSignature {
   readonly signatureAsString: string;
 
+  readonly signatureAsUint8Array: Uint8Array;
+
   readonly offset: number;
 
   readonly name: string;
@@ -27,7 +29,7 @@ export class FileSignature {
 
   private readonly fileSignature: FileSignatureValue[];
 
-  private static FILE_SIGNATURES: FileSignature[] = [];
+  static FILE_SIGNATURES: FileSignature[] = [];
 
   static findSignature(buffer: ArrayBuffer): FileSignatureMatchResult {
     let bestMatch: FileSignatureMatch | false = false;
@@ -82,9 +84,19 @@ export class FileSignature {
       }
 
       this.fileSignature.push({ type: "number", number: parseInt(sub, 16) });
-
-      FileSignature.FILE_SIGNATURES.push(this);
     }
+
+    this.signatureAsUint8Array = new Uint8Array(
+      this.fileSignature.map((v) => {
+        if (v.type === "wildcard") {
+          return 0
+        }
+
+        return v.number;
+      }),
+    );
+
+    FileSignature.FILE_SIGNATURES.push(this);
   }
 
   /**
@@ -124,6 +136,29 @@ export class FileSignature {
       signatureOffset: this.offset,
     };
   }
+
+  // function hexToIso88591AndEncodeControlChars(hexString) {
+  //     // Convert hex string to ISO-8859-1 string
+  //     let isoString = '';
+  //     for (let i = 0; i < hexString.length; i += 2) {
+  //         const byte = hexString.substring(i, i + 2);
+  //         const code = parseInt(byte, 16);
+  //         isoString += String.fromCharCode(code);
+  //     }
+
+  //     // Encode control characters for HTML display
+  //     let encodedStr = '';
+  //     for (let i = 0; i < isoString.length; i++) {
+  //         const charCode = isoString.charCodeAt(i);
+  //         if (charCode <= 31 || charCode === 127) {
+  //             encodedStr += `&#${charCode};`;
+  //         } else {
+  //             encodedStr += isoString[i];
+  //         }
+  //     }
+
+  //     return encodedStr;
+  // }
 }
 
 // Order taken from https://en.wikipedia.org/wiki/List_of_file_signatures

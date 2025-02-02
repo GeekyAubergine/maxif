@@ -8,9 +8,10 @@ export default {
         text: "#080808",
         secondary: "#4F4F4F",
         accent: "#7CCCFF",
-        codeBackground: "#DDDDDD",
+        codeBackground: "#EEEEEE",
         code: "#D4D4D4",
-        border: "#D8D8D8",
+        border: "#D0D0D0",
+        tableRowBackground: "#D8D8D8",
       },
       gridTemplateColumns: {
         // Simple 8 row grid

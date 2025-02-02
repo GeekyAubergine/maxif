@@ -60,7 +60,11 @@
     }
 
     .width-controlled {
-        @apply w-full mx-auto md:w-[64ch];
+        @apply w-full mx-auto md:w-[64ch] px-4;
+    }
+
+    .wide {
+        @apply w-full max-w-[102ch] px-4 mx-auto;
     }
 
     main {
@@ -76,6 +80,27 @@
     footer,
     article {
         @apply flex flex-col;
+    }
+
+    table {
+        @apply w-full;
+
+        th,
+        td {
+            @apply px-4 py-4 text-left block md:table-cell;
+        }
+
+        th {
+            @apply bg-text text-white text-left;
+        }
+
+        tr {
+            @apply border-b border-border;
+        }
+
+        tr:nth-child(even) {
+            @apply bg-codeBackground;
+        }
     }
 
     /* ----------------  Typography ---------------- */
@@ -240,7 +265,7 @@
         .data {
             @apply text-text ml-4;
             word-wrap: break-word;
-            text-overflow: clip
+            text-overflow: clip;
         }
     }
 
@@ -254,6 +279,12 @@
 
         p {
             @apply my-2 leading-6;
+        }
+    }
+
+    .formats-list {
+        .name {
+            @apply md:max-w-[20ch];
         }
     }
 }

@@ -9,6 +9,9 @@ export default function NavBar() {
         </div>
         <div className="link-list">
           <p>
+            <a href="/formats">Formats</a>
+          </p>
+          <p>
             <a href="/faq">FAQ</a>
           </p>
         </div>

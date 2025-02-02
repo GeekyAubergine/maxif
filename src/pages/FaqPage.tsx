@@ -66,6 +66,25 @@ export default function FaqPage() {
           In addition, reading this data allows MAXIF to display additional
           details about the file in one place.
         </p>
+        <h4 id="metadata-issue">I've got an issue</h4>
+        <p>
+          If you find a file that's not being identified correctly, or you have
+          a file that MAXIF can't read. Please contact me on{" "}
+          <a
+            href="https://social.lol/@geekyaubergine"
+            rel="noopener noreferrer"
+          >
+            Mastodon
+          </a>{" "}
+          or open an issue on{" "}
+          <a
+            href="https://github.com/GeekyAubergine/maxif/issues"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          .
+        </p>
         <h3 id="why-maxif-">Why MAXIF?</h3>
         <p>
           My friend{" "}
