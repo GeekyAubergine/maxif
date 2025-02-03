@@ -216,7 +216,7 @@
         @apply pr-2;
 
         .input-wrapper {
-            @apply flex flex-col items-center justify-center w-[8rem] h-[12rem] bg-codeBackground border-2 border-dashed border-border rounded;
+            @apply flex flex-col items-center justify-center w-[8rem] h-[12rem] bg-codeBackground border-2 border-dashed border-border rounded hover:cursor-pointer;
 
             p {
                 @apply text-center;
